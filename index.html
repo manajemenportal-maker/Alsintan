@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>KSA Tractor Parts - Spare Part & Hydraulic Part List</title>
+  <meta name="description" content="Aplikasi katalog spare part traktor roda 4 dan part list hidrolik detail untuk PT Kalimaja Surya Alam." />
+  <style>
+    .image-bank{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}.catalog-ref{cursor:pointer;border-radius:18px;overflow:hidden;background:#fff;border:1px solid #dbe7f7;position:relative}.catalog-img{display:block;width:100%;height:220px;object-fit:cover;object-position:top center;background:#f8fafc}.sheet-preview{height:520px;object-fit:contain}.big-catalog-img{height:260px}.full-catalog-img{display:block;width:100%;max-height:78vh;object-fit:contain;background:#f8fafc;border:1px solid var(--line);border-radius:18px}.sheet-view{display:grid;gap:12px}.missing-img:before{content:'Gambar belum ditemukan. Upload file ke folder assets/hydraulic-catalog sesuai nama page-01.png s/d page-10.png';position:absolute;inset:0;display:grid;place-items:center;text-align:center;padding:18px;background:#fff7ed;color:#9a3412;font-weight:900;font-size:13px;z-index:1}.missing-img img{opacity:.12}.img-sheet{background:#fff;border:1px solid var(--line);border-radius:24px;box-shadow:var(--shadow);overflow:hidden}.sheet-head{padding:14px 16px;background:#eff6ff;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;gap:10px;align-items:center}.sheet-head b{font-size:15px}.sheet-body{padding:14px}.sheet-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}.mini-part{border:1px solid #dbe7f7;border-radius:16px;padding:10px;background:#fbfdff}.mini-title{display:flex;justify-content:space-between;gap:8px;align-items:center;margin-bottom:8px}.mini-title b{font-size:12px}.fake-img{height:108px;border-radius:14px;background:linear-gradient(135deg,#f8fafc,#e8eef7);display:grid;place-items:center;position:relative;overflow:hidden;border:1px solid #e2e8f0}.fake-img svg{width:90%;height:90%}.tech-photo{display:grid;grid-template-columns:1fr 1fr;gap:8px}.caption{font-size:11px;color:var(--muted);font-weight:800;margin-top:6px}.photo-label{position:absolute;top:8px;left:8px;background:#0b4aaa;color:#fff;font-size:10px;font-weight:900;padding:4px 7px;border-radius:999px}.modal{position:fixed;inset:0;background:rgba(3,10,24,.72);z-index:80;display:none;align-items:center;justify-content:center;padding:18px}.modal.active{display:flex}.modal-card{width:min(1050px,96vw);max-height:92vh;overflow:auto;background:#fff;border-radius:26px;box-shadow:0 30px 90px rgba(0,0,0,.35)}.modal-head{position:sticky;top:0;background:#fff;border-bottom:1px solid var(--line);padding:16px 18px;display:flex;justify-content:space-between;gap:12px;align-items:center;z-index:2}.modal-body{padding:18px}.detail-visual{display:grid;grid-template-columns:1fr 1fr;gap:16px}.visual-box{border:1px solid var(--line);border-radius:22px;padding:14px;background:#fbfdff}.visual-box h4{margin:0 0 10px}.big-fake{height:280px}.spec-list{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:14px}.spec-list div{border:1px solid #e2e8f0;border-radius:14px;padding:11px;background:#fff}.spec-list b{display:block;font-size:11px;color:#52637a;text-transform:uppercase;margin-bottom:4px}@media(max-width:900px){.image-bank,.detail-visual,.spec-list{grid-template-columns:1fr}.sheet-grid{grid-template-columns:1fr}.big-fake{height:220px}}
+    :root{
+      --bg:#f4f7fb;
+      --card:#ffffff;
+      --dark:#102033;
+      --muted:#64748b;
+      --line:#d8e1ee;
+      --blue:#1667d9;
+      --blue2:#0b4aaa;
+      --cyan:#00a6d6;
+      --green:#16a34a;
+      --orange:#f97316;
+      --red:#dc2626;
+      --soft:#eaf2ff;
+      --shadow:0 18px 45px rgba(15,32,55,.10);
+      --radius:22px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;
+      background:linear-gradient(135deg,#edf5ff 0%,#f8fbff 42%,#eef7f3 100%);
+      color:var(--dark);
+    }
+    .app{display:grid;grid-template-columns:290px 1fr;min-height:100vh}
+    aside{
+      position:sticky;top:0;height:100vh;overflow:auto;
+      background:linear-gradient(180deg,#0f2d57,#0b1d37 55%,#081526);
+      color:#fff;padding:22px 18px;box-shadow:10px 0 30px rgba(5,18,38,.20);z-index:20;
+    }
+    .brand{display:flex;gap:12px;align-items:center;margin-bottom:22px}
+    .logo{
+      width:50px;height:50px;border-radius:17px;
+      background:linear-gradient(135deg,#55b8ff,#1768e5 58%,#093b92);
+      display:grid;place-items:center;font-weight:900;font-size:18px;letter-spacing:.5px;
+      box-shadow:0 12px 25px rgba(0,125,255,.35)
+    }
+    .brand h1{font-size:16px;line-height:1.15;margin:0}
+    .brand small{display:block;color:#b6d6ff;margin-top:4px;font-size:11px}
+    .nav-title{font-size:11px;text-transform:uppercase;letter-spacing:.13em;color:#87add8;margin:18px 8px 8px}
+    .nav button{
+      width:100%;border:0;background:transparent;color:#dbeafe;text-align:left;
+      padding:12px 13px;border-radius:14px;display:flex;align-items:center;gap:10px;cursor:pointer;font-weight:700;
+    }
+    .nav button:hover,.nav button.active{background:rgba(255,255,255,.12);color:#fff}
+    .nav .ico{width:24px;height:24px;border-radius:8px;background:rgba(255,255,255,.13);display:grid;place-items:center;font-size:13px}
+    .side-card{margin-top:20px;background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.14);border-radius:20px;padding:15px}
+    .side-card b{display:block;margin-bottom:7px}
+    .side-card p{margin:0;color:#c9ddf8;font-size:12px;line-height:1.45}
+    main{padding:24px;overflow:hidden}
+    .hero{
+      background:linear-gradient(135deg,#0f5ed7,#0aa7d7 60%,#15b67b);
+      color:#fff;border-radius:30px;padding:28px;box-shadow:var(--shadow);position:relative;overflow:hidden
+    }
+    .hero:after{content:"";position:absolute;right:-90px;top:-90px;width:260px;height:260px;background:rgba(255,255,255,.14);border-radius:50%}
+    .hero-grid{display:grid;grid-template-columns:1.3fr .7fr;gap:20px;position:relative;z-index:1}
+    .badge{display:inline-flex;align-items:center;gap:8px;border:1px solid rgba(255,255,255,.35);background:rgba(255,255,255,.16);padding:8px 12px;border-radius:999px;font-size:12px;font-weight:800}
+    .hero h2{font-size:34px;line-height:1.05;margin:16px 0 10px;max-width:780px}
+    .hero p{margin:0;color:#eaf6ff;line-height:1.55;max-width:780px}
+    .hero-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
+    .btn{
+      border:0;border-radius:14px;padding:12px 15px;font-weight:900;cursor:pointer;transition:.2s;
+      background:#fff;color:#0e4ea7;box-shadow:0 12px 24px rgba(5,37,89,.18)
+    }
+    .btn:hover{transform:translateY(-1px)}
+    .btn.dark{background:#102033;color:#fff}
+    .btn.ghost{background:rgba(255,255,255,.16);color:#fff;border:1px solid rgba(255,255,255,.35)}
+    .hero-panel{background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.25);border-radius:24px;padding:18px;backdrop-filter:blur(10px)}
+    .metric{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:12px}
+    .metric div{background:rgba(255,255,255,.16);border-radius:18px;padding:13px}
+    .metric strong{display:block;font-size:24px}.metric span{font-size:11px;color:#d8eeff}
+    .toolbar{display:grid;grid-template-columns:1.4fr .8fr .8fr auto;gap:12px;margin:22px 0}
+    .input,.select{
+      width:100%;border:1px solid var(--line);background:#fff;border-radius:16px;padding:13px 14px;font-weight:700;color:#17233a;outline:none;
+      box-shadow:0 8px 20px rgba(15,32,55,.04)
+    }
+    .cards{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin:18px 0}
+    .card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:18px;box-shadow:var(--shadow)}
+    .stat{display:flex;align-items:center;justify-content:space-between;gap:10px}
+    .stat .num{font-size:28px;font-weight:950}.stat .label{color:var(--muted);font-weight:800;font-size:12px}.stat .mark{font-size:24px;background:var(--soft);border-radius:14px;width:46px;height:46px;display:grid;place-items:center}
+    .section{display:none}.section.active{display:block}
+    .section-title{display:flex;justify-content:space-between;align-items:flex-end;gap:16px;margin:22px 0 12px}
+    .section-title h3{font-size:24px;margin:0}.section-title p{margin:5px 0 0;color:var(--muted)}
+    .table-wrap{background:#fff;border:1px solid var(--line);border-radius:24px;box-shadow:var(--shadow);overflow:hidden}
+    table{border-collapse:collapse;width:100%;font-size:13px}
+    th{background:#eff6ff;color:#17345f;text-align:left;padding:13px;border-bottom:1px solid var(--line);font-size:12px;text-transform:uppercase;letter-spacing:.04em;white-space:nowrap}
+    td{padding:13px;border-bottom:1px solid #edf2f7;vertical-align:top}
+    tr:hover td{background:#fbfdff}
+    .pill{display:inline-flex;align-items:center;border-radius:999px;padding:5px 9px;font-size:11px;font-weight:900;white-space:nowrap}
+    .pill.red{background:#fee2e2;color:#991b1b}.pill.orange{background:#ffedd5;color:#9a3412}.pill.green{background:#dcfce7;color:#166534}.pill.blue{background:#dbeafe;color:#1e40af}.pill.gray{background:#f1f5f9;color:#475569}
+    .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:16px}.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .form{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}.form label{font-size:12px;font-weight:900;color:#41546d}.form input,.form select,.form textarea{margin-top:6px;width:100%;border:1px solid var(--line);border-radius:14px;padding:11px;background:#fff;font-weight:700}.form textarea{min-height:86px;resize:vertical}.full{grid-column:1/-1}
+    .part-card{display:grid;gap:12px}.part-head{display:flex;justify-content:space-between;gap:10px}.part-head h4{margin:0;font-size:16px}.part-head small{color:var(--muted);font-weight:800}.part-meta{display:flex;gap:8px;flex-wrap:wrap}.desc{color:#52637a;line-height:1.45;font-size:13px}.kbd{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;background:#f1f5f9;border:1px solid #e2e8f0;padding:2px 6px;border-radius:7px;font-size:11px}
+    .flow{display:grid;grid-template-columns:repeat(6,1fr);gap:10px}.flow div{background:#fff;border:1px solid var(--line);border-radius:18px;padding:14px;box-shadow:var(--shadow);text-align:center;font-weight:900}.flow span{display:block;color:var(--muted);font-size:11px;margin-top:4px}
+    .print-area{background:#fff;border-radius:24px;border:1px solid var(--line);padding:20px;box-shadow:var(--shadow)}
+    .watermark{font-size:12px;color:#8090a8;text-align:center;margin-top:20px}
+    @media(max-width:1100px){.app{grid-template-columns:1fr}aside{position:relative;height:auto}.toolbar{grid-template-columns:1fr 1fr}.cards{grid-template-columns:1fr 1fr}.hero-grid,.grid-2,.grid-3{grid-template-columns:1fr}.flow{grid-template-columns:repeat(3,1fr)}}
+    @media(max-width:640px){main{padding:14px}.hero{padding:20px;border-radius:22px}.hero h2{font-size:26px}.toolbar{grid-template-columns:1fr}.cards{grid-template-columns:1fr}.form{grid-template-columns:1fr}.table-wrap{overflow:auto}table{min-width:920px}.flow{grid-template-columns:1fr 1fr}.btn{width:100%}}
+    @media print{aside,.toolbar,.hero-actions,.no-print{display:none!important}.app{display:block}main{padding:0}.section{display:block}.card,.table-wrap,.print-area{box-shadow:none}.hero{background:#fff;color:#111;border:1px solid #ddd}.hero p{color:#333}}
+  </style>
+</head>
+<body>
+<div class="app">
+  <aside>
+    <div class="brand">
+      <div class="logo">KSA</div>
+      <div><h1>KSA Tractor Parts</h1><small>Spare Part & Hydraulic List</small></div>
+    </div>
+    <div class="nav-title">Menu Aplikasi</div>
+    <div class="nav" id="nav"></div>
+    <div class="side-card">
+      <b>PT Kalimaja Surya Alam</b>
+      <p>Solusi Total Mekanisasi Pertanian. Aplikasi ini disiapkan untuk katalog spare part, stok awal, penawaran, dan kebutuhan TKDN/assembling.</p>
+    </div>
+  </aside>
+
+  <main>
+    <section class="hero">
+      <div class="hero-grid">
+        <div>
+          <div class="badge">🚜 Traktor Roda 4 • Spare Part • Hidrolik</div>
+          <h2>Aplikasi Part List Traktor 4WD dengan Detail Sistem Hidrolik</h2>
+          <p>Kelola data traktor, spare part umum, part list hidrolik, prioritas stok, estimasi kebutuhan, hingga cetak katalog untuk teknisi, purchasing, gudang, dan sales.</p>
+          <div class="hero-actions no-print">
+            <button class="btn" onclick="showSection('hydraulic')">Buka Part List Hidrolik</button>
+            <button class="btn ghost" onclick="showSection('catalog')">Lihat Katalog</button>
+            <button class="btn dark" onclick="window.print()">Cetak / PDF</button>
+          </div>
+        </div>
+        <div class="hero-panel">
+          <b>Ringkasan Database</b>
+          <div class="metric">
+            <div><strong id="mTractor">0</strong><span>Model Traktor</span></div>
+            <div><strong id="mPart">0</strong><span>Total Part</span></div>
+            <div><strong id="mHyd">0</strong><span>Part Hidrolik</span></div>
+            <div><strong id="mStock">0</strong><span>Wajib Stok</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="toolbar no-print">
+      <input class="input" id="search" placeholder="Cari part: hydraulic pump, hose, orbitrol, filter, lift arm..." oninput="renderAll()" />
+      <select class="select" id="groupFilter" onchange="renderAll()"><option value="all">Semua Grup</option></select>
+      <select class="select" id="priorityFilter" onchange="renderAll()"><option value="all">Semua Prioritas</option><option value="Wajib">Wajib Stok</option><option value="Sedang">Sedang</option><option value="Opsional">Opsional</option></select>
+      <button class="btn dark" onclick="resetFilter()">Reset</button>
+    </div>
+
+    <div class="cards">
+      <div class="card stat"><div><div class="num" id="sAll">0</div><div class="label">Total Item Terfilter</div></div><div class="mark">📦</div></div>
+      <div class="card stat"><div><div class="num" id="sHyd">0</div><div class="label">Item Hidrolik</div></div><div class="mark">💧</div></div>
+      <div class="card stat"><div><div class="num" id="sHigh">0</div><div class="label">Prioritas Wajib</div></div><div class="mark">🔥</div></div>
+      <div class="card stat"><div><div class="num" id="sGroup">0</div><div class="label">Grup Part</div></div><div class="mark">🧩</div></div>
+    </div>
+
+    <section class="section active" id="dashboard">
+      <div class="section-title"><div><h3>Dashboard Sistem Traktor</h3><p>Gambaran sistem, alur oli hidrolik, dan kelompok spare part utama.</p></div></div>
+      <div class="grid-2">
+        <div class="card">
+          <h3>Alur Kerja Hidrolik</h3>
+          <div class="flow">
+            <div>Reservoir<span>Oli transmisi/hidrolik</span></div>
+            <div>Filter<span>Suction/return</span></div>
+            <div>Pompa<span>Tekanan oli</span></div>
+            <div>Valve<span>Kontrol aliran</span></div>
+            <div>Cylinder<span>Tenaga angkat</span></div>
+            <div>Return<span>Kembali ke tangki</span></div>
+          </div>
+        </div>
+        <div class="card">
+          <h3>Kelompok Modul Aplikasi</h3>
+          <p class="desc">Aplikasi ini bisa dijadikan dasar untuk sistem stok gudang, katalog spare part, penawaran, import parts, data TKDN, hingga service record traktor.</p>
+          <div class="part-meta">
+            <span class="pill blue">Master Traktor</span><span class="pill green">Spare Part</span><span class="pill orange">Hydraulic Detail</span><span class="pill gray">Stock Priority</span><span class="pill red">Critical Part</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="tractor">
+      <div class="section-title"><div><h3>Master Traktor Roda 4</h3><p>Contoh data awal model traktor yang dapat dikembangkan sesuai unit PT KSA.</p></div></div>
+      <div class="table-wrap"><table><thead><tr><th>Model</th><th>HP</th><th>Drive</th><th>Engine</th><th>Hydraulic System</th><th>Implement Umum</th></tr></thead><tbody id="tractorRows"></tbody></table></div>
+    </section>
+
+    <section class="section" id="sparepart">
+      <div class="section-title"><div><h3>Spare Part Umum Traktor</h3><p>Seluruh kelompok spare part utama di luar hidrolik juga disiapkan untuk katalog.</p></div></div>
+      <div class="table-wrap"><table><thead><tr><th>Kode</th><th>Grup</th><th>Nama Part</th><th>Fungsi</th><th>Lokasi</th><th>Satuan</th><th>Prioritas</th></tr></thead><tbody id="spareRows"></tbody></table></div>
+    </section>
+
+    <section class="section" id="hydraulic">
+      <div class="section-title"><div><h3>Part List Hidrolik Detail</h3><p>Rincian item hidrolik, fungsi, lokasi, sub-komponen, dan prioritas stok.</p></div><button class="btn dark no-print" onclick="exportCSV('hydraulic')">Export CSV</button></div>
+      <div class="table-wrap"><table><thead><tr><th>Kode</th><th>Group</th><th>Nama Part</th><th>Sub Part / Isi Kit</th><th>Fungsi</th><th>Lokasi</th><th>Satuan</th><th>Risiko</th><th>Prioritas</th></tr></thead><tbody id="hydRows"></tbody></table></div>
+    </section>
+
+    <section class="section" id="catalog">
+      <div class="section-title"><div><h3>Katalog Visual Part</h3><p>Tampilan kartu untuk sales, gudang, dan teknisi lapangan.</p></div></div>
+      <div class="grid-3" id="catalogGrid"></div>
+    </section>
+
+    <section class="section" id="images">
+      <div class="section-title"><div><h3>Galeri Gambar Teknik & Foto Part</h3><p>Setiap part hidrolik memiliki kartu visual berisi foto/render part dan gambar teknik sederhana. Klik part untuk lihat detail.</p></div><button class="btn dark no-print" onclick="showSection('hydraulic')">Lihat Tabel Part</button></div>
+      <div class="image-bank" id="imageBank"></div>
+    </section>
+
+    <section class="section" id="stock">
+      <div class="section-title"><div><h3>Rekomendasi Stok Awal</h3><p>Daftar part yang disarankan wajib tersedia untuk operasional servis dan penjualan cepat.</p></div></div>
+      <div class="table-wrap"><table><thead><tr><th>Kode</th><th>Nama Part</th><th>Group</th><th>Alasan Wajib Stok</th><th>Minimal Stok</th><th>Satuan</th></tr></thead><tbody id="stockRows"></tbody></table></div>
+    </section>
+
+    <section class="section" id="form">
+      <div class="section-title"><div><h3>Input Part Baru</h3><p>Form demo untuk menambah data katalog. Pada versi online bisa disambungkan ke Firebase.</p></div></div>
+      <div class="card">
+        <div class="form">
+          <label>Kode Part<input id="fCode" placeholder="HYD-064" /></label>
+          <label>Group<select id="fGroup"></select></label>
+          <label>Nama Part<input id="fName" placeholder="Hydraulic pressure hose" /></label>
+          <label>Satuan<select id="fUnit"><option>pcs</option><option>set</option><option>meter</option><option>liter</option></select></label>
+          <label>Lokasi<input id="fLoc" placeholder="Pump to control valve" /></label>
+          <label>Prioritas<select id="fPri"><option>Wajib</option><option>Sedang</option><option>Opsional</option></select></label>
+          <label class="full">Fungsi<textarea id="fFunc" placeholder="Menyalurkan oli hidrolik bertekanan tinggi..."></textarea></label>
+          <button class="btn dark full" onclick="addPart()">Tambah ke Database Demo</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="print">
+      <div class="section-title"><div><h3>Format Cetak Penawaran / Katalog</h3><p>Siap dicetak menjadi PDF untuk lampiran penawaran spare part.</p></div></div>
+      <div class="print-area">
+        <h2>PT Kalimaja Surya Alam</h2>
+        <p><b>Bidang:</b> Solusi Total Mekanisasi Pertanian — Traktor Roda 4, Crawler, Combine Harvester, Pompa, dan Spare Part.</p>
+        <p><b>Kontak:</b> HP/WA 0851 1103 3789 • Email: kalimajasuryaalam@gmail.com</p>
+        <hr />
+        <h3>Daftar Kelompok Spare Part Hidrolik</h3>
+        <ol id="printList"></ol>
+        <div class="watermark">KSA Tractor Parts System — Hydraulic Part List</div>
+      </div>
+    </section>
+  </main>
+</div>
+
+<div class="modal" id="partModal" onclick="if(event.target.id==='partModal')closePartModal()">
+  <div class="modal-card">
+    <div class="modal-head">
+      <div><b id="modalTitle">Detail Part</b><div class="caption" id="modalSub">Foto & Gambar Teknik</div></div>
+      <button class="btn dark" onclick="closePartModal()">Tutup</button>
+    </div>
+    <div class="modal-body" id="modalBody"></div>
+  </div>
+</div>
+
+<script>
+const tractors=[
+  {model:'KSA 504 4WD Utility Tractor',hp:'50 HP',drive:'4WD',engine:'Diesel 4 cylinder',hyd:'Open center hydraulic, rear 3-point hitch, power steering',imp:'Rotary tiller 175 cm, disc plough, trailer, sprayer'},
+  {model:'KSA 704 4WD Farm Tractor',hp:'70 HP',drive:'4WD',engine:'Diesel 4 cylinder turbo',hyd:'Main hydraulic pump, remote hydraulic outlet, draft/position control',imp:'Rotary, disc harrow, ridger, trailer tipping'},
+  {model:'KSA 904 Heavy Duty Tractor',hp:'90 HP',drive:'4WD',engine:'Diesel turbo',hyd:'Higher flow pump, auxiliary valve, loader ready',imp:'Loader, heavy plough, harrow, planter'},
+  {model:'KSA Crawler Tractor',hp:'50–100 HP',drive:'Crawler',engine:'Diesel',hyd:'Hydraulic implement lift, steering/clutch hydraulic option',imp:'Sawah basah, land preparation, puddling'}
+];
+
+let parts=[
+  {code:'ENG-001',group:'Engine',name:'Oil filter engine',sub:'Element filter, seal',func:'Menyaring oli mesin agar komponen engine tidak cepat aus.',loc:'Engine block',unit:'pcs',risk:'Tinggi',pri:'Wajib'},
+  {code:'ENG-002',group:'Engine',name:'Fuel filter',sub:'Primary/secondary element',func:'Menyaring solar sebelum masuk injection pump.',loc:'Fuel line',unit:'pcs',risk:'Tinggi',pri:'Wajib'},
+  {code:'CLT-001',group:'Clutch',name:'Clutch disc',sub:'Disc, lining, spline hub',func:'Meneruskan dan memutus tenaga mesin ke transmisi.',loc:'Flywheel housing',unit:'pcs',risk:'Sedang',pri:'Sedang'},
+  {code:'TRN-001',group:'Transmission',name:'Gear set transmission',sub:'Main gear, counter gear, bearing',func:'Mengubah rasio putaran dan torsi traktor.',loc:'Gearbox',unit:'set',risk:'Sedang',pri:'Opsional'},
+  {code:'BRK-001',group:'Brake',name:'Brake disc / shoe',sub:'Brake lining, spring, pin',func:'Sistem pengereman roda belakang.',loc:'Rear axle',unit:'set',risk:'Tinggi',pri:'Wajib'},
+  {code:'ELC-001',group:'Electrical',name:'Alternator',sub:'Pulley, bearing, regulator',func:'Mengisi aki dan mensuplai listrik kendaraan.',loc:'Engine side',unit:'pcs',risk:'Sedang',pri:'Sedang'},
+  {code:'BOD-001',group:'Body',name:'Bonnet / engine hood',sub:'Panel, hinge, latch',func:'Pelindung mesin dan tampilan unit.',loc:'Front body',unit:'pcs',risk:'Rendah',pri:'Opsional'},
+
+  {code:'HYD-001',group:'Hydraulic Pump',name:'Main hydraulic pump',sub:'Gear set, housing, shaft, bushing, oil seal, O-ring, gasket',func:'Menghasilkan tekanan oli untuk 3-point hitch, remote hydraulic, dan attachment.',loc:'Engine side / transmission case',unit:'pcs',risk:'Tinggi',pri:'Wajib'},
+  {code:'HYD-002',group:'Hydraulic Pump',name:'Tandem hydraulic pump',sub:'Dual gear pump, common shaft, seal kit, flange',func:'Memisahkan aliran untuk steering dan implement pada traktor tertentu.',loc:'Engine timing gear / gearbox',unit:'pcs',risk:'Tinggi',pri:'Wajib'},
+  {code:'HYD-003',group:'Hydraulic Pump',name:'Power steering pump',sub:'Pump housing, rotor/gear, shaft seal, coupling',func:'Memberikan tekanan khusus ke sistem power steering.',loc:'Engine side',unit:'pcs',risk:'Tinggi',pri:'Wajib'},
+  {code:'HYD-004',group:'Hydraulic Pump',name:'Pump coupling / spline sleeve',sub:'Spline sleeve, key, lock ring',func:'Penghubung putaran mesin/gear ke pompa hidrolik.',loc:'Pump drive',unit:'pcs',risk:'Sedang',pri:'Sedang'},
+  {code:'HYD-005',group:'Hydraulic Pump',name:'Hydraulic pump seal kit',sub:'Oil seal, O-ring, gasket, backup ring',func:'Repair kit kebocoran pompa hidrolik.',loc:'Inside pump',unit:'set',risk:'Tinggi',pri:'Wajib'},
+
+  {code:'HYD-006',group:'Oil & Reservoir',name:'Hydraulic transmission oil',sub:'UTTO / hydraulic oil sesuai spesifikasi',func:'Media tekanan, pelumas, pendingin, dan proteksi komponen.',loc:'Transmission/rear axle housing',unit:'liter',risk:'Tinggi',pri:'Wajib'},
+  {code:'HYD-007',group:'Oil & Reservoir',name:'Hydraulic reservoir / rear housing',sub:'Housing, plug, dipstick, breather, drain plug',func:'Tempat penyimpanan oli hidrolik yang umumnya menyatu dengan transmisi.',loc:'Rear transmission case',unit:'pcs',risk:'Rendah',pri:'Opsional'},
+  {code:'HYD-008',group:'Oil & Reservoir',name:'Breather cap hydraulic',sub:'Cap, mesh filter, seal',func:'Ventilasi tekanan udara dalam housing oli.',loc:'Top rear housing',unit:'pcs',risk:'Sedang',pri:'Wajib'},
+  {code:'HYD-009',group:'Oil & Reservoir',name:'Dipstick hydraulic oil',sub:'Dipstick, tube, cap seal',func:'Pengukur level oli hidrolik/transmisi.',loc:'Transmission case',unit:'pcs',risk:'Rendah',pri:'Sedang'},
+  {code:'HYD-010',group:'Oil & Reservoir',name:'Magnetic drain plug',sub:'Plug magnet, washer',func:'Menangkap serpihan logam dan membuang oli saat servis.',loc:'Bottom housing',unit:'pcs',risk:'Sedang',pri:'Sedang'},
+
+  {code:'HYD-011',group:'Filter',name:'Hydraulic oil filter',sub:'Filter element, housing seal',func:'Menyaring kotoran oli pada jalur balik atau tekanan.',loc:'Hydraulic line / filter head',unit:'pcs',risk:'Tinggi',pri:'Wajib'},
+  {code:'HYD-012',group:'Filter',name:'Suction strainer',sub:'Metal mesh, frame, O-ring',func:'Menyaring oli sebelum masuk ke pompa.',loc:'Inside rear housing / suction line',unit:'pcs',risk:'Tinggi',pri:'Wajib'},
+  {code:'HYD-013',group:'Filter',name:'Return filter element',sub:'Paper element, end cap, seal',func:'Menyaring oli yang kembali dari valve/cylinder.',loc:'Return line',unit:'pcs',risk:'Tinggi',pri:'Wajib'},
+  {code:'HYD-014',group:'Filter',name:'Filter housing',sub:'Filter head, bowl, spring, bypass valve',func:'Rumah filter dan jalur bypass saat filter tersumbat.',loc:'Side transmission / hydraulic block',unit:'pcs',risk:'Sedang',pri:'Sedang'},
+  {code:'HYD-015',group:'Filter',name:'Filter O-ring set',sub:'O-ring besar/kecil, backup ring',func:'Mencegah rembes pada rumah filter.',loc:'Filter housing',unit:'set',risk:'Tinggi',pri:'Wajib'},
+
+  {code:'HYD-016',group:'Pipe & Hose',name:'High pressure hydraulic hose',sub:'Rubber hose 1/2 inch, 2-wire, crimp fitting',func:'Menyalurkan oli bertekanan tinggi dari pompa/valve ke cylinder.',loc:'Pump-valve-cylinder',unit:'pcs',risk:'Tinggi',pri:'Wajib'},
+  {code:'HYD-017',group:'Pipe & Hose',name:'Suction hose',sub:'Low pressure reinforced hose, clamp',func:'Jalur hisap oli dari reservoir ke pompa.',loc:'Reservoir to pump',unit:'pcs',risk:'Tinggi',pri:'Wajib'},
+  {code:'HYD-018',group:'Pipe & Hose',name:'Return hose',sub:'Low pressure hose, clamp, fitting',func:'Jalur oli balik menuju reservoir.',loc:'Valve to tank',unit:'pcs',risk:'Sedang',pri:'Wajib'},
+  {code:'HYD-019',group:'Pipe & Hose',name:'Steel hydraulic pipe',sub:'Bent steel pipe, flare nut, clamp',func:'Saluran oli permanen yang tahan tekanan dan panas.',loc:'Chassis/rear housing',unit:'pcs',risk:'Sedang',pri:'Sedang'},
+  {code:'HYD-020',group:'Pipe & Hose',name:'Power steering hose set',sub:'Pressure hose, return hose, orbitrol-cylinder hose',func:'Paket jalur oli power steering.',loc:'Pump-orbitrol-cylinder',unit:'set',risk:'Tinggi',pri:'Wajib'},
+  {code:'HYD-021',group:'Pipe & Hose',name:'Remote hydraulic hose',sub:'Hose pair, male/female fitting',func:'Jalur hidrolik untuk implement belakang atau trailer tipping.',loc:'Rear remote outlet',unit:'set',risk:'Tinggi',pri:'Wajib'},
+  {code:'HYD-022',group:'Pipe & Hose',name:'Hose guard spiral',sub:'Plastic/steel spiral protector',func:'Melindungi hose dari gesekan dan benturan.',loc:'External hose',unit:'meter',risk:'Sedang',pri:'Sedang'},
+
+  {code:'HYD-023',group:'Fitting & Coupler',name:'Quick coupler female',sub:'Coupler body, locking ball, dust cap',func:'Konektor cepat hidrolik sisi traktor.',loc:'Rear hydraulic outlet',unit:'pcs',risk:'Tinggi',pri:'Wajib'},
+  {code:'HYD-024',group:'Fitting & Coupler',name:'Quick coupler male',sub:'Plug nipple, dust cap',func:'Konektor cepat hidrolik sisi implement.',loc:'Implement hose',unit:'pcs',risk:'Tinggi',pri:'Wajib'},
+  {code:'HYD-025',group:'Fitting & Coupler',name:'Hydraulic elbow fitting',sub:'90 degree adapter, O-ring/washer',func:'Mengubah arah jalur hose/pipa.',loc:'Valve/pump/cylinder port',unit:'pcs',risk:'Sedang',pri:'Wajib'},
+  {code:'HYD-026',group:'Fitting & Coupler',name:'Straight connector fitting',sub:'Nipple, union, adapter thread',func:'Menyambung hose atau pipa lurus.',loc:'Hydraulic line',unit:'pcs',risk:'Sedang',pri:'Wajib'},
+  {code:'HYD-027',group:'Fitting & Coupler',name:'Banjo bolt & banjo fitting',sub:'Banjo bolt, eye fitting, copper washer',func:'Koneksi hidrolik pada ruang terbatas.',loc:'Pump/orbitrol/cylinder',unit:'set',risk:'Tinggi',pri:'Wajib'},
+  {code:'HYD-028',group:'Fitting & Coupler',name:'Copper washer set',sub:'Washer berbagai ukuran',func:'Seal pada banjo dan fitting bertekanan.',loc:'Hydraulic joints',unit:'set',risk:'Tinggi',pri:'Wajib'},
+  {code:'HYD-029',group:'Fitting & Coupler',name:'Dust cap quick coupler',sub:'Rubber/plastic cap',func:'Melindungi coupler dari debu dan lumpur.',loc:'Rear outlet/implement',unit:'pcs',risk:'Sedang',pri:'Wajib'},
+
+  {code:'HYD-030',group:'Control Valve',name:'Main hydraulic control valve',sub:'Valve body, spool, spring, plug, O-ring',func:'Mengatur naik-turun 3-point hitch dan aliran oli utama.',loc:'Under seat / rear housing',unit:'pcs',risk:'Tinggi',pri:'Wajib'},
+  {code:'HYD-031',group:'Control Valve',name:'Spool valve',sub:'Spool, groove, seal, spring',func:'Mengarahkan aliran oli sesuai posisi tuas.',loc:'Control valve body',unit:'pcs',risk:'Tinggi',pri:'Sedang'},
+  {code:'HYD-032',group:'Control Valve',name:'Relief valve',sub:'Spring, ball/poppet, seat, adjusting screw, lock nut',func:'Pengaman tekanan berlebih agar pompa, hose, dan cylinder tidak pecah.',loc:'Valve block / pump outlet',unit:'pcs',risk:'Tinggi',pri:'Wajib'},
+  {code:'HYD-033',group:'Control Valve',name:'Flow control valve',sub:'Needle valve, knob, O-ring',func:'Mengatur kecepatan turun/naik implement.',loc:'Hydraulic top cover',unit:'pcs',risk:'Sedang',pri:'Sedang'},
+  {code:'HYD-034',group:'Control Valve',name:'Check valve',sub:'Ball, spring, seat, plug',func:'Menahan aliran balik agar tekanan tidak drop.',loc:'Valve block/cylinder circuit',unit:'pcs',risk:'Sedang',pri:'Sedang'},
+  {code:'HYD-035',group:'Control Valve',name:'Priority valve',sub:'Valve spool, spring, body',func:'Memprioritaskan aliran oli ke power steering.',loc:'Pump outlet / steering circuit',unit:'pcs',risk:'Sedang',pri:'Sedang'},
+  {code:'HYD-036',group:'Control Valve',name:'Remote hydraulic valve block',sub:'Valve body, lever, spool, coupler port',func:'Mengoperasikan implement tambahan seperti trailer tipping dan loader.',loc:'Rear fender / rear housing',unit:'pcs',risk:'Tinggi',pri:'Wajib'},
+  {code:'HYD-037',group:'Control Valve',name:'Control valve seal kit',sub:'O-ring spool, backup ring, plug seal, gasket',func:'Repair kebocoran pada valve hidrolik.',loc:'Control valve',unit:'set',risk:'Tinggi',pri:'Wajib'},
+
+  {code:'HYD-038',group:'Cylinder',name:'Lift cylinder / rockshaft cylinder',sub:'Barrel, piston, rod, cylinder head',func:'Mengangkat dan menurunkan implement 3-point hitch.',loc:'Inside rear hydraulic housing',unit:'pcs',risk:'Tinggi',pri:'Wajib'},
+  {code:'HYD-039',group:'Cylinder',name:'Lift cylinder seal kit',sub:'Piston seal, rod seal, wiper, wear ring, O-ring',func:'Repair kebocoran dan penurunan daya angkat.',loc:'Lift cylinder',unit:'set',risk:'Tinggi',pri:'Wajib'},
+  {code:'HYD-040',group:'Cylinder',name:'External hydraulic cylinder',sub:'Barrel, rod, piston, clevis, pin, seal kit',func:'Cylinder tambahan untuk implement, tipping, atau loader.',loc:'External implement/loader',unit:'pcs',risk:'Tinggi',pri:'Wajib'},
+  {code:'HYD-041',group:'Cylinder',name:'Steering cylinder',sub:'Cylinder body, rod, tie rod end, seal kit',func:'Mengubah tekanan oli menjadi gerakan belok roda depan.',loc:'Front axle',unit:'pcs',risk:'Tinggi',pri:'Wajib'},
+  {code:'HYD-042',group:'Cylinder',name:'Steering cylinder seal kit',sub:'Rod seal, piston seal, wiper, O-ring',func:'Repair kebocoran cylinder steering.',loc:'Steering cylinder',unit:'set',risk:'Tinggi',pri:'Wajib'},
+
+  {code:'HYD-043',group:'Power Steering',name:'Orbitrol steering unit',sub:'Gerotor, spool, housing, seal kit',func:'Mengatur aliran oli ke steering cylinder saat setir diputar.',loc:'Under steering column',unit:'pcs',risk:'Tinggi',pri:'Wajib'},
+  {code:'HYD-044',group:'Power Steering',name:'Orbitrol seal kit',sub:'Shaft seal, O-ring, dust seal',func:'Repair kebocoran orbitrol.',loc:'Orbitrol unit',unit:'set',risk:'Tinggi',pri:'Wajib'},
+  {code:'HYD-045',group:'Power Steering',name:'Steering column coupling',sub:'Universal joint, spline, bolt',func:'Menghubungkan setir ke orbitrol.',loc:'Steering column',unit:'pcs',risk:'Sedang',pri:'Sedang'},
+
+  {code:'HYD-046',group:'3-Point Hitch',name:'Rockshaft / lift shaft',sub:'Shaft, bushing, arm spline',func:'Poros pengangkat yang meneruskan tenaga cylinder ke lift arm.',loc:'Rear housing top',unit:'pcs',risk:'Sedang',pri:'Sedang'},
+  {code:'HYD-047',group:'3-Point Hitch',name:'Lift arm RH/LH',sub:'Arm, spline hub, lock bolt',func:'Lengan luar pengangkat implement.',loc:'Rear top housing',unit:'pcs',risk:'Sedang',pri:'Wajib'},
+  {code:'HYD-048',group:'3-Point Hitch',name:'Lower link',sub:'Ball end, link bar, pin hole',func:'Penghubung bawah antara traktor dan implement.',loc:'Rear hitch',unit:'pcs',risk:'Tinggi',pri:'Wajib'},
+  {code:'HYD-049',group:'3-Point Hitch',name:'Top link',sub:'Adjuster tube, ball end, lock nut',func:'Penghubung atas untuk mengatur sudut implement.',loc:'Rear hitch',unit:'pcs',risk:'Tinggi',pri:'Wajib'},
+  {code:'HYD-050',group:'3-Point Hitch',name:'Leveling box / lift rod',sub:'Thread adjuster, yoke, pin',func:'Mengatur keseimbangan kiri-kanan implement.',loc:'Rear hitch',unit:'pcs',risk:'Sedang',pri:'Wajib'},
+  {code:'HYD-051',group:'3-Point Hitch',name:'Stabilizer chain / bar',sub:'Chain/bar, bracket, pin',func:'Menahan ayunan implement agar stabil.',loc:'Rear hitch side',unit:'set',risk:'Tinggi',pri:'Wajib'},
+  {code:'HYD-052',group:'3-Point Hitch',name:'Hitch pin set',sub:'Top link pin, lower link pin, lynch pin, split pin',func:'Pengunci implement pada 3-point hitch.',loc:'Rear hitch',unit:'set',risk:'Tinggi',pri:'Wajib'},
+
+  {code:'HYD-053',group:'Position/Draft Control',name:'Position control lever',sub:'Lever, quadrant, knob, friction washer',func:'Mengatur tinggi implement berdasarkan posisi operator.',loc:'Right side operator seat',unit:'pcs',risk:'Sedang',pri:'Sedang'},
+  {code:'HYD-054',group:'Position/Draft Control',name:'Draft control lever',sub:'Lever, link rod, spring',func:'Mengatur kedalaman kerja bajak berdasarkan beban tarik.',loc:'Operator console/rear housing',unit:'pcs',risk:'Sedang',pri:'Opsional'},
+  {code:'HYD-055',group:'Position/Draft Control',name:'Internal hydraulic linkage',sub:'Rod, cam, roller, pin, spring, adjuster',func:'Menghubungkan tuas operator dengan control valve internal.',loc:'Inside hydraulic top cover',unit:'set',risk:'Sedang',pri:'Sedang'},
+
+  {code:'HYD-056',group:'Loader Hydraulic',name:'Loader joystick valve',sub:'Joystick, cable, valve block, spool',func:'Mengontrol boom dan bucket front loader.',loc:'Operator side / loader frame',unit:'set',risk:'Tinggi',pri:'Sedang'},
+  {code:'HYD-057',group:'Loader Hydraulic',name:'Boom lift cylinder',sub:'Cylinder pair, seal kit, pin, bushing',func:'Mengangkat boom loader.',loc:'Front loader frame',unit:'pcs',risk:'Tinggi',pri:'Sedang'},
+  {code:'HYD-058',group:'Loader Hydraulic',name:'Bucket tilt cylinder',sub:'Cylinder pair, seal kit, pin, bushing',func:'Menggerakkan bucket loader untuk dumping/crowding.',loc:'Bucket linkage',unit:'pcs',risk:'Tinggi',pri:'Sedang'},
+  {code:'HYD-059',group:'Loader Hydraulic',name:'Loader quick coupler set',sub:'Multi coupler / quick coupler, dust cap, bracket',func:'Memudahkan lepas-pasang jalur hidrolik loader.',loc:'Loader hydraulic manifold',unit:'set',risk:'Sedang',pri:'Sedang'},
+
+  {code:'HYD-060',group:'Sensor & Switch',name:'Hydraulic pressure switch',sub:'Pressure switch, connector, washer',func:'Memberi sinyal tekanan oli rendah/abnormal.',loc:'Hydraulic line / transmission case',unit:'pcs',risk:'Sedang',pri:'Sedang'},
+  {code:'HYD-061',group:'Sensor & Switch',name:'Oil temperature sensor',sub:'Sensor, socket, seal washer',func:'Membaca suhu oli hidrolik/transmisi.',loc:'Transmission case',unit:'pcs',risk:'Sedang',pri:'Opsional'},
+  {code:'HYD-062',group:'Sensor & Switch',name:'Oil level sensor',sub:'Float/sensor, connector',func:'Memberi informasi level oli pada sistem modern.',loc:'Reservoir/housing',unit:'pcs',risk:'Sedang',pri:'Opsional'},
+
+  {code:'HYD-063',group:'Seal & Gasket',name:'Hydraulic top cover gasket',sub:'Paper/metal gasket',func:'Mencegah rembes antara top cover dan rear housing.',loc:'Hydraulic top cover',unit:'pcs',risk:'Tinggi',pri:'Wajib'},
+  {code:'HYD-064',group:'Seal & Gasket',name:'O-ring hydraulic assorted kit',sub:'O-ring berbagai ukuran NBR/FKM',func:'Persediaan seal umum untuk valve, fitting, filter, dan cylinder.',loc:'All hydraulic joints',unit:'set',risk:'Tinggi',pri:'Wajib'},
+  {code:'HYD-065',group:'Seal & Gasket',name:'Backup ring set',sub:'PTFE backup ring sizes',func:'Penahan seal agar tidak extrusion pada tekanan tinggi.',loc:'Cylinder/valve',unit:'set',risk:'Sedang',pri:'Wajib'},
+  {code:'HYD-066',group:'Seal & Gasket',name:'Wiper seal set',sub:'Dust/wiper seal cylinder',func:'Mencegah debu masuk ke rod cylinder.',loc:'Hydraulic cylinders',unit:'set',risk:'Tinggi',pri:'Wajib'},
+
+  {code:'HYD-067',group:'Housing & Mounting',name:'Hydraulic top cover assembly',sub:'Top cover, valve seat, linkage mount',func:'Rumah mekanisme angkat dan valve hidrolik belakang.',loc:'Rear housing top',unit:'pcs',risk:'Rendah',pri:'Opsional'},
+  {code:'HYD-068',group:'Housing & Mounting',name:'Valve block mounting bolt set',sub:'Bolt, washer, lock washer',func:'Pengikat valve block agar tidak bocor/bergeser.',loc:'Valve block',unit:'set',risk:'Sedang',pri:'Sedang'},
+  {code:'HYD-069',group:'Housing & Mounting',name:'Hydraulic pipe clamp set',sub:'Rubber clamp, bracket, bolt',func:'Menahan pipa/selang agar tidak getar dan aus.',loc:'Chassis/rear housing',unit:'set',risk:'Sedang',pri:'Wajib'},
+  {code:'HYD-070',group:'Housing & Mounting',name:'Cylinder pin & bushing set',sub:'Pin, bushing, snap ring, grease nipple',func:'Dudukan gerak cylinder dan implement.',loc:'Cylinder mount/loader/hitch',unit:'set',risk:'Tinggi',pri:'Wajib'}
+];
+
+const menu=[
+  ['dashboard','🏠','Dashboard'],['tractor','🚜','Master Traktor'],['sparepart','📦','Spare Part Umum'],['hydraulic','💧','Part List Hidrolik'],['catalog','🧾','Katalog Visual'],['stock','🔥','Stok Wajib'],['form','➕','Input Part'],['images','🖼️','Gambar Part'],['print','🖨️','Cetak Katalog']
+];
+function groupClass(v){return v==='Wajib'?'red':v==='Sedang'?'orange':'gray'}
+function riskClass(v){return v==='Tinggi'?'red':v==='Sedang'?'orange':'green'}
+function isHyd(p){return p.code.startsWith('HYD')}
+function getFiltered(){
+  const q=document.getElementById('search').value.toLowerCase().trim();
+  const g=document.getElementById('groupFilter').value;
+  const pr=document.getElementById('priorityFilter').value;
+  return parts.filter(p=>{
+    const hay=Object.values(p).join(' ').toLowerCase();
+    return (!q||hay.includes(q))&&(g==='all'||p.group===g)&&(pr==='all'||p.pri===pr);
+  });
+}
+function showSection(id){
+  document.querySelectorAll('.section').forEach(s=>s.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  document.querySelectorAll('.nav button').forEach(b=>b.classList.toggle('active',b.dataset.id===id));
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+function initNav(){
+  document.getElementById('nav').innerHTML=menu.map(m=>`<button data-id="${m[0]}" onclick="showSection('${m[0]}')"><span class="ico">${m[1]}</span>${m[2]}</button>`).join('');
+  document.querySelector('.nav button').classList.add('active');
+}
+function renderFilters(){
+  const groups=[...new Set(parts.map(p=>p.group))].sort();
+  const current=document.getElementById('groupFilter').value||'all';
+  document.getElementById('groupFilter').innerHTML='<option value="all">Semua Grup</option>'+groups.map(g=>`<option ${g===current?'selected':''}>${g}</option>`).join('');
+  document.getElementById('fGroup').innerHTML=groups.map(g=>`<option>${g}</option>`).join('');
+}
+function renderAll(){
+  renderFilters();
+  const data=getFiltered();
+  const hyd=data.filter(isHyd);
+  document.getElementById('mTractor').textContent=tractors.length;
+  document.getElementById('mPart').textContent=parts.length;
+  document.getElementById('mHyd').textContent=parts.filter(isHyd).length;
+  document.getElementById('mStock').textContent=parts.filter(p=>p.pri==='Wajib').length;
+  document.getElementById('sAll').textContent=data.length;
+  document.getElementById('sHyd').textContent=hyd.length;
+  document.getElementById('sHigh').textContent=data.filter(p=>p.pri==='Wajib').length;
+  document.getElementById('sGroup').textContent=new Set(data.map(p=>p.group)).size;
+  document.getElementById('tractorRows').innerHTML=tractors.map(t=>`<tr><td><b>${t.model}</b></td><td>${t.hp}</td><td>${t.drive}</td><td>${t.engine}</td><td>${t.hyd}</td><td>${t.imp}</td></tr>`).join('');
+  document.getElementById('spareRows').innerHTML=data.filter(p=>!isHyd(p)).map(rowBasic).join('') || `<tr><td colspan="7">Data tidak ditemukan.</td></tr>`;
+  document.getElementById('hydRows').innerHTML=hyd.map(p=>`<tr><td><span class="kbd">${p.code}</span></td><td>${p.group}</td><td><b>${p.name}</b></td><td>${p.sub}</td><td>${p.func}</td><td>${p.loc}</td><td>${p.unit}</td><td><span class="pill ${riskClass(p.risk)}">${p.risk}</span></td><td><span class="pill ${groupClass(p.pri)}">${p.pri}</span></td></tr>`).join('') || `<tr><td colspan="9">Data hidrolik tidak ditemukan.</td></tr>`;
+  document.getElementById('catalogGrid').innerHTML=data.slice(0,60).map(card).join('');
+  document.getElementById('stockRows').innerHTML=parts.filter(p=>p.pri==='Wajib').map((p,i)=>`<tr><td><span class="kbd">${p.code}</span></td><td><b>${p.name}</b></td><td>${p.group}</td><td>${p.risk==='Tinggi'?'Risiko kerusakan tinggi dan sering dibutuhkan teknisi.':'Dibutuhkan untuk servis cepat dan pemasangan implement.'}</td><td>${isHyd(p)?(p.unit==='liter'?'20':'2'):(p.unit==='set'?'1':'2')}</td><td>${p.unit}</td></tr>`).join('');
+  document.getElementById('printList').innerHTML=[...new Set(parts.filter(isHyd).map(p=>p.group))].map(g=>`<li><b>${g}</b> — ${parts.filter(p=>p.group===g).map(p=>p.name).slice(0,6).join(', ')}.</li>`).join('');
+  renderImageBank(data.filter(isHyd));
+}
+function rowBasic(p){return `<tr><td><span class="kbd">${p.code}</span></td><td>${p.group}</td><td><b>${p.name}</b></td><td>${p.func}</td><td>${p.loc}</td><td>${p.unit}</td><td><span class="pill ${groupClass(p.pri)}">${p.pri}</span></td></tr>`}
+function card(p){return `<div class="card part-card"><div class="part-head"><div><h4>${p.name}</h4><small>${p.code} • ${p.group}</small></div><span class="pill ${groupClass(p.pri)}">${p.pri}</span></div>${partVisual(p,'small')}<p class="desc">${p.func}</p><div class="part-meta"><span class="pill blue">${p.loc}</span><span class="pill ${riskClass(p.risk)}">Risiko ${p.risk}</span><span class="pill gray">${p.unit}</span></div><div class="desc"><b>Sub part:</b> ${p.sub}</div><button class="btn dark" onclick="openPartModal('${p.code}')">Lihat Detail Gambar</button></div>`}
+function resetFilter(){document.getElementById('search').value='';document.getElementById('groupFilter').value='all';document.getElementById('priorityFilter').value='all';renderAll()}
+const CATALOG_SHEETS=[
+  {no:'01',title:'Hydraulic Pump & Oil Reservoir',range:'HYD-001 s/d HYD-010',from:1,to:10,src:'assets/hydraulic-catalog/page-01.png'},
+  {no:'02',title:'Filter System',range:'HYD-011 s/d HYD-015',from:11,to:15,src:'assets/hydraulic-catalog/page-02.png'},
+  {no:'03',title:'Pipe & Hose',range:'HYD-016 s/d HYD-022',from:16,to:22,src:'assets/hydraulic-catalog/page-03.png'},
+  {no:'04',title:'Fitting & Coupler',range:'HYD-023 s/d HYD-029',from:23,to:29,src:'assets/hydraulic-catalog/page-04.png'},
+  {no:'05',title:'Control Valve',range:'HYD-030 s/d HYD-037',from:30,to:37,src:'assets/hydraulic-catalog/page-05.png'},
+  {no:'06',title:'Cylinders',range:'HYD-038 s/d HYD-042',from:38,to:42,src:'assets/hydraulic-catalog/page-06.png'},
+  {no:'07',title:'Power Steering & 3-Point Hitch I',range:'HYD-043 s/d HYD-050',from:43,to:50,src:'assets/hydraulic-catalog/page-07.png'},
+  {no:'08',title:'3-Point Hitch II & Position/Draft Control',range:'HYD-051 s/d HYD-055',from:51,to:55,src:'assets/hydraulic-catalog/page-08.png'},
+  {no:'09',title:'Loader Hydraulic & Sensors',range:'HYD-056 s/d HYD-062',from:56,to:62,src:'assets/hydraulic-catalog/page-09.png'},
+  {no:'10',title:'Seals, Gaskets, Housing & Mounting',range:'HYD-063 s/d HYD-070',from:63,to:70,src:'assets/hydraulic-catalog/page-10.png'}
+];
+function hydNumber(code){return parseInt(String(code).replace('HYD-',''),10)||0}
+function sheetForPart(p){const n=hydNumber(p.code);return CATALOG_SHEETS.find(s=>n>=s.from&&n<=s.to)||CATALOG_SHEETS[0]}
+function partVisual(p,size='small'){
+  const sheet=sheetForPart(p); const cls=size==='big'?'catalog-img big-catalog-img':'catalog-img';
+  return `<div class="catalog-ref" onclick="openSheetModal('${sheet.no}')"><img class="${cls}" src="${sheet.src}" alt="${sheet.title}" onerror="this.closest('.catalog-ref').classList.add('missing-img')"><div class="caption">Gambar asli katalog: Halaman ${sheet.no} — ${sheet.range}</div></div>`;
+}
+function renderImageBank(items){
+  const bank=document.getElementById('imageBank'); if(!bank)return;
+  bank.innerHTML=CATALOG_SHEETS.map(s=>`<div class="img-sheet"><div class="sheet-head"><b>Halaman ${s.no} — ${s.title}</b><span class="pill blue">${s.range}</span></div><div class="sheet-body"><div class="catalog-ref" onclick="openSheetModal('${s.no}')"><img class="catalog-img sheet-preview" src="${s.src}" alt="${s.title}" onerror="this.closest('.catalog-ref').classList.add('missing-img')"><div class="caption">Klik untuk perbesar gambar katalog asli</div></div></div></div>`).join('');
+}
+function openSheetModal(no){
+  const s=CATALOG_SHEETS.find(x=>x.no===no); if(!s)return;
+  document.getElementById('modalTitle').textContent=`Halaman ${s.no} — ${s.title}`;
+  document.getElementById('modalSub').textContent=s.range;
+  document.getElementById('modalBody').innerHTML=`<div class="sheet-view"><img class="full-catalog-img" src="${s.src}" alt="${s.title}"><div class="caption">File gambar: ${s.src}</div></div>`;
+  document.getElementById('partModal').classList.add('active');
+}
+function openPartModal(code){
+  const p=parts.find(x=>x.code===code); if(!p)return;
+  const s=sheetForPart(p);
+  document.getElementById('modalTitle').textContent=`${p.code} — ${p.name}`;
+  document.getElementById('modalSub').textContent=`Ada di Halaman ${s.no}: ${s.title}`;
+  document.getElementById('modalBody').innerHTML=`<div class="sheet-view"><img class="full-catalog-img" src="${s.src}" alt="${s.title}"><div class="spec-list"><div><b>Kode</b>${p.code}</div><div><b>Group</b>${p.group}</div><div><b>Nama Part</b>${p.name}</div><div><b>Satuan</b>${p.unit}</div><div><b>Lokasi</b>${p.loc}</div><div><b>Prioritas</b><span class="pill ${groupClass(p.pri)}">${p.pri}</span></div><div class="full"><b>Fungsi</b>${p.func}</div><div class="full"><b>Sub Part / Isi Kit</b>${p.sub}</div></div></div>`;
+  document.getElementById('partModal').classList.add('active');
+}
+function closePartModal(){document.getElementById('partModal').classList.remove('active')}
+function addPart(){
+  const p={code:fCode.value||'NEW-'+String(parts.length+1).padStart(3,'0'),group:fGroup.value,name:fName.value||'Part baru',sub:'Belum diisi',func:fFunc.value||'Fungsi belum diisi.',loc:fLoc.value||'Belum diisi',unit:fUnit.value,risk:'Sedang',pri:fPri.value};
+  parts.unshift(p);renderAll();showSection('catalog');alert('Part demo berhasil ditambahkan. Untuk versi online, data ini bisa disimpan ke Firebase/Firestore.');
+}
+function exportCSV(type){
+  const rows=(type==='hydraulic'?parts.filter(isHyd):parts).map(p=>[p.code,p.group,p.name,p.sub,p.func,p.loc,p.unit,p.risk,p.pri]);
+  const csv=['Kode,Group,Nama Part,Sub Part,Fungsi,Lokasi,Satuan,Risiko,Prioritas',...rows.map(r=>r.map(v=>'"'+String(v).replaceAll('"','""')+'"').join(','))].join('\n');
+  const blob=new Blob([csv],{type:'text/csv;charset=utf-8;'});const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download='part-list-hidrolik-traktor.csv';a.click();URL.revokeObjectURL(url);
+}
+initNav();renderAll();
+</script>
+</body>
+</html>
