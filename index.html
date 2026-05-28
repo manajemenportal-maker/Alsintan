@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>KSA Tractor Parts - Spare Part & Hydraulic Part List</title>
-  <meta name="description" content="Aplikasi katalog spare part traktor roda 4 dan part list hidrolik detail untuk PT Kalimaja Surya Alam." />
+  <title>KSA Parts Center - Traktor, Crawler, Pompa Alcon & Combine Harvester</title>
+  <meta name="description" content="Aplikasi katalog spare part khusus Traktor Roda 4, Crawler Tractor, Pompa Alcon 3/4/6 inch, dan Combine Harvester untuk PT Kalimaja Surya Alam." />
   <style>
     .image-bank{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}.catalog-ref{cursor:pointer;border-radius:18px;overflow:hidden;background:#fff;border:1px solid #dbe7f7;position:relative}.catalog-img{display:block;width:100%;height:220px;object-fit:cover;object-position:top center;background:#f8fafc}.sheet-preview{height:520px;object-fit:contain}.big-catalog-img{height:260px}.full-catalog-img{display:block;width:100%;max-height:78vh;object-fit:contain;background:#f8fafc;border:1px solid var(--line);border-radius:18px}.sheet-view{display:grid;gap:12px}.missing-img:before{content:'Gambar belum ditemukan. Upload file ke folder assets/hydraulic-catalog sesuai nama page-01.png s/d page-10.png';position:absolute;inset:0;display:grid;place-items:center;text-align:center;padding:18px;background:#fff7ed;color:#9a3412;font-weight:900;font-size:13px;z-index:1}.missing-img img{opacity:.12}.img-sheet{background:#fff;border:1px solid var(--line);border-radius:24px;box-shadow:var(--shadow);overflow:hidden}.sheet-head{padding:14px 16px;background:#eff6ff;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;gap:10px;align-items:center}.sheet-head b{font-size:15px}.sheet-body{padding:14px}.sheet-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}.mini-part{border:1px solid #dbe7f7;border-radius:16px;padding:10px;background:#fbfdff}.mini-title{display:flex;justify-content:space-between;gap:8px;align-items:center;margin-bottom:8px}.mini-title b{font-size:12px}.fake-img{height:108px;border-radius:14px;background:linear-gradient(135deg,#f8fafc,#e8eef7);display:grid;place-items:center;position:relative;overflow:hidden;border:1px solid #e2e8f0}.fake-img svg{width:90%;height:90%}.tech-photo{display:grid;grid-template-columns:1fr 1fr;gap:8px}.caption{font-size:11px;color:var(--muted);font-weight:800;margin-top:6px}.photo-label{position:absolute;top:8px;left:8px;background:#0b4aaa;color:#fff;font-size:10px;font-weight:900;padding:4px 7px;border-radius:999px}.modal{position:fixed;inset:0;background:rgba(3,10,24,.72);z-index:80;display:none;align-items:center;justify-content:center;padding:18px}.modal.active{display:flex}.modal-card{width:min(1050px,96vw);max-height:92vh;overflow:auto;background:#fff;border-radius:26px;box-shadow:0 30px 90px rgba(0,0,0,.35)}.modal-head{position:sticky;top:0;background:#fff;border-bottom:1px solid var(--line);padding:16px 18px;display:flex;justify-content:space-between;gap:12px;align-items:center;z-index:2}.modal-body{padding:18px}.detail-visual{display:grid;grid-template-columns:1fr 1fr;gap:16px}.visual-box{border:1px solid var(--line);border-radius:22px;padding:14px;background:#fbfdff}.visual-box h4{margin:0 0 10px}.big-fake{height:280px}.spec-list{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:14px}.spec-list div{border:1px solid #e2e8f0;border-radius:14px;padding:11px;background:#fff}.spec-list b{display:block;font-size:11px;color:#52637a;text-transform:uppercase;margin-bottom:4px}@media(max-width:900px){.image-bank,.detail-visual,.spec-list{grid-template-columns:1fr}.sheet-grid{grid-template-columns:1fr}.big-fake{height:220px}}
     :root{
@@ -113,7 +113,7 @@
   <aside>
     <div class="brand">
       <div class="logo">KSA</div>
-      <div><h1>KSA Tractor Parts</h1><small>Spare Part & Hydraulic List</small></div>
+      <div><h1>KSA Parts Center</h1><small>Tractor • Crawler • Alcon • Combine</small></div>
     </div>
     <div class="nav-title">Menu Aplikasi</div>
     <div class="nav" id="nav"></div>
@@ -127,11 +127,12 @@
     <section class="hero">
       <div class="hero-grid">
         <div>
-          <div class="badge">🚜 Traktor Roda 4 • Spare Part • Hidrolik</div>
-          <h2>Aplikasi Part List Traktor 4WD dengan Detail Sistem Hidrolik</h2>
-          <p>Kelola data traktor, spare part umum, part list hidrolik, prioritas stok, estimasi kebutuhan, hingga cetak katalog untuk teknisi, purchasing, gudang, dan sales.</p>
+          <div class="badge">🚜 Traktor Roda 4 • Crawler • Pompa Alcon • Combine Harvester</div>
+          <h2>Aplikasi Part List Alsintan KSA untuk 4 Lini Produk Utama</h2>
+          <p>Kelola data unit, spare part umum, part list hidrolik, part crawler, pompa Alcon 3/4/6 inch, combine harvester, prioritas stok, estimasi kebutuhan, hingga cetak katalog untuk teknisi, purchasing, gudang, dan sales.</p>
           <div class="hero-actions no-print">
             <button class="btn" onclick="showSection('hydraulic')">Buka Part List Hidrolik</button>
+            <button class="btn ghost" onclick="showSection('sparepart')">Buka Semua Spare Part</button>
             <button class="btn ghost" onclick="showSection('catalog')">Lihat Katalog</button>
             <button class="btn dark" onclick="window.print()">Cetak / PDF</button>
           </div>
@@ -139,7 +140,7 @@
         <div class="hero-panel">
           <b>Ringkasan Database</b>
           <div class="metric">
-            <div><strong id="mTractor">0</strong><span>Model Traktor</span></div>
+            <div><strong id="mTractor">0</strong><span>Model Unit</span></div>
             <div><strong id="mPart">0</strong><span>Total Part</span></div>
             <div><strong id="mHyd">0</strong><span>Part Hidrolik</span></div>
             <div><strong id="mStock">0</strong><span>Wajib Stok</span></div>
@@ -149,7 +150,7 @@
     </section>
 
     <div class="toolbar no-print">
-      <input class="input" id="search" placeholder="Cari part: hydraulic pump, hose, orbitrol, filter, lift arm..." oninput="renderAll()" />
+      <input class="input" id="search" placeholder="Cari part: hydraulic pump, crawler track, alcon impeller, combine cutter bar..." oninput="renderAll()" />
       <select class="select" id="groupFilter" onchange="renderAll()"><option value="all">Semua Grup</option></select>
       <select class="select" id="priorityFilter" onchange="renderAll()"><option value="all">Semua Prioritas</option><option value="Wajib">Wajib Stok</option><option value="Sedang">Sedang</option><option value="Opsional">Opsional</option></select>
       <button class="btn dark" onclick="resetFilter()">Reset</button>
@@ -187,12 +188,12 @@
     </section>
 
     <section class="section" id="tractor">
-      <div class="section-title"><div><h3>Master Traktor Roda 4</h3><p>Contoh data awal model traktor yang dapat dikembangkan sesuai unit PT KSA.</p></div></div>
-      <div class="table-wrap"><table><thead><tr><th>Model</th><th>HP</th><th>Drive</th><th>Engine</th><th>Hydraulic System</th><th>Implement Umum</th></tr></thead><tbody id="tractorRows"></tbody></table></div>
+      <div class="section-title"><div><h3>Master Unit Produk KSA</h3><p>Database awal untuk Traktor Roda 4, Crawler Tractor, Pompa Alcon 3/4/6 inch, dan Combine Harvester.</p></div></div>
+      <div class="table-wrap"><table><thead><tr><th>Model / Unit</th><th>Kapasitas</th><th>Drive / Type</th><th>Mesin</th><th>Sistem Utama</th><th>Aplikasi Umum</th></tr></thead><tbody id="tractorRows"></tbody></table></div>
     </section>
 
     <section class="section" id="sparepart">
-      <div class="section-title"><div><h3>Spare Part Umum Traktor</h3><p>Seluruh kelompok spare part utama di luar hidrolik juga disiapkan untuk katalog.</p></div></div>
+      <div class="section-title"><div><h3>Spare Part Semua Lini Produk</h3><p>Kelompok spare part untuk Traktor Roda 4, Crawler, Pompa Alcon, dan Combine Harvester.</p></div></div>
       <div class="table-wrap"><table><thead><tr><th>Kode</th><th>Grup</th><th>Nama Part</th><th>Fungsi</th><th>Lokasi</th><th>Satuan</th><th>Prioritas</th></tr></thead><tbody id="spareRows"></tbody></table></div>
     </section>
 
@@ -262,7 +263,12 @@ const tractors=[
   {model:'KSA 504 4WD Utility Tractor',hp:'50 HP',drive:'4WD',engine:'Diesel 4 cylinder',hyd:'Open center hydraulic, rear 3-point hitch, power steering',imp:'Rotary tiller 175 cm, disc plough, trailer, sprayer'},
   {model:'KSA 704 4WD Farm Tractor',hp:'70 HP',drive:'4WD',engine:'Diesel 4 cylinder turbo',hyd:'Main hydraulic pump, remote hydraulic outlet, draft/position control',imp:'Rotary, disc harrow, ridger, trailer tipping'},
   {model:'KSA 904 Heavy Duty Tractor',hp:'90 HP',drive:'4WD',engine:'Diesel turbo',hyd:'Higher flow pump, auxiliary valve, loader ready',imp:'Loader, heavy plough, harrow, planter'},
-  {model:'KSA Crawler Tractor',hp:'50–100 HP',drive:'Crawler',engine:'Diesel',hyd:'Hydraulic implement lift, steering/clutch hydraulic option',imp:'Sawah basah, land preparation, puddling'}
+  {model:'KSA Crawler 504 Wetland Tractor',hp:'50 HP',drive:'Crawler rubber/steel track',engine:'Diesel 4 cylinder',hyd:'Hydraulic lift, steering clutch/brake, track undercarriage',imp:'Sawah basah, puddling, rotary, land preparation'},
+  {model:'KSA Crawler 704 Heavy Duty',hp:'70 HP',drive:'Crawler track heavy duty',engine:'Diesel turbo',hyd:'Hydraulic implement lift, final drive, track tensioner',imp:'Lahan berat, tanah basah, pembukaan lahan, bajak berat'},
+  {model:'Alcon Centrifugal Pump 3 inch',hp:'3 inch outlet',drive:'Centrifugal irrigation pump',engine:'Gasoline/diesel engine option',hyd:'Pump casing, impeller, mechanical seal, suction-discharge',imp:'Irigasi kecil, kebun, tambak, drainase ringan'},
+  {model:'Alcon Centrifugal Pump 4 inch',hp:'4 inch outlet',drive:'Centrifugal irrigation pump',engine:'Gasoline/diesel engine option',hyd:'Pump casing, impeller, mechanical seal, suction-discharge',imp:'Irigasi sawah, kebun, kolam, drainase sedang'},
+  {model:'Alcon Centrifugal Pump 6 inch',hp:'6 inch outlet',drive:'High capacity centrifugal pump',engine:'Diesel engine recommended',hyd:'Large casing, impeller, volute, suction-discharge flange',imp:'Irigasi besar, proyek air, tambak, banjir/drainase'},
+  {model:'KSA Combine Harvester 110 HP',hp:'110 HP class',drive:'Crawler/track combine',engine:'Diesel turbo',hyd:'Header lift, reel, threshing, cleaning, grain tank, unloading auger',imp:'Panen padi, perontokan, pembersihan gabah, lahan sawah'}
 ];
 
 let parts=[
@@ -272,7 +278,60 @@ let parts=[
   {code:'TRN-001',group:'Transmission',name:'Gear set transmission',sub:'Main gear, counter gear, bearing',func:'Mengubah rasio putaran dan torsi traktor.',loc:'Gearbox',unit:'set',risk:'Sedang',pri:'Opsional'},
   {code:'BRK-001',group:'Brake',name:'Brake disc / shoe',sub:'Brake lining, spring, pin',func:'Sistem pengereman roda belakang.',loc:'Rear axle',unit:'set',risk:'Tinggi',pri:'Wajib'},
   {code:'ELC-001',group:'Electrical',name:'Alternator',sub:'Pulley, bearing, regulator',func:'Mengisi aki dan mensuplai listrik kendaraan.',loc:'Engine side',unit:'pcs',risk:'Sedang',pri:'Sedang'},
-  {code:'BOD-001',group:'Body',name:'Bonnet / engine hood',sub:'Panel, hinge, latch',func:'Pelindung mesin dan tampilan unit.',loc:'Front body',unit:'pcs',risk:'Rendah',pri:'Opsional'},
+  {code:'BOD-001',group:'Traktor Roda 4 - Body',name:'Bonnet / engine hood',sub:'Panel, hinge, latch',func:'Pelindung mesin dan tampilan unit.',loc:'Front body',unit:'pcs',risk:'Rendah',pri:'Opsional'},
+
+  {code:'CRW-001',group:'Crawler - Undercarriage',name:'Rubber track / steel track assembly',sub:'Track belt/link, lug, pin, guide',func:'Media gerak utama crawler untuk traksi di lahan basah dan berat.',loc:'Left/right undercarriage',unit:'set',risk:'Tinggi',pri:'Wajib'},
+  {code:'CRW-002',group:'Crawler - Undercarriage',name:'Track roller lower',sub:'Roller shell, shaft, bearing, seal',func:'Menopang berat unit dan menjaga track bergerak stabil.',loc:'Lower track frame',unit:'pcs',risk:'Tinggi',pri:'Wajib'},
+  {code:'CRW-003',group:'Crawler - Undercarriage',name:'Carrier roller upper',sub:'Roller, shaft, bearing, seal cap',func:'Menahan bagian atas track agar tidak kendur berlebihan.',loc:'Upper track frame',unit:'pcs',risk:'Sedang',pri:'Wajib'},
+  {code:'CRW-004',group:'Crawler - Undercarriage',name:'Front idler wheel',sub:'Idler wheel, bushing, shaft, seal',func:'Menuntun arah track dan menerima tekanan tensioner.',loc:'Front undercarriage',unit:'pcs',risk:'Tinggi',pri:'Wajib'},
+  {code:'CRW-005',group:'Crawler - Undercarriage',name:'Drive sprocket',sub:'Sprocket tooth, hub, bolt',func:'Meneruskan putaran final drive ke track.',loc:'Rear/final drive side',unit:'pcs',risk:'Tinggi',pri:'Wajib'},
+  {code:'CRW-006',group:'Crawler - Undercarriage',name:'Track tensioner adjuster',sub:'Grease cylinder, spring, seal, adjuster rod',func:'Mengatur kekencangan track agar tidak lepas.',loc:'Front idler/tensioner frame',unit:'set',risk:'Tinggi',pri:'Wajib'},
+  {code:'CRW-007',group:'Crawler - Final Drive',name:'Final drive gear set',sub:'Sun gear, planetary gear, ring gear, bearing',func:'Meneruskan torsi besar dari transmisi ke sprocket.',loc:'Final drive housing',unit:'set',risk:'Tinggi',pri:'Wajib'},
+  {code:'CRW-008',group:'Crawler - Final Drive',name:'Final drive oil seal kit',sub:'Oil seal, O-ring, gasket, dust seal',func:'Mencegah kebocoran oli final drive.',loc:'Final drive housing',unit:'set',risk:'Tinggi',pri:'Wajib'},
+  {code:'CRW-009',group:'Crawler - Steering',name:'Steering clutch plate',sub:'Friction disc, steel plate, spring',func:'Mengatur belok kiri/kanan pada sistem steering clutch.',loc:'Steering clutch housing',unit:'set',risk:'Tinggi',pri:'Wajib'},
+  {code:'CRW-010',group:'Crawler - Steering',name:'Steering brake band / disc',sub:'Brake lining, band/disc, spring, pin',func:'Membantu pengereman sisi track saat belok.',loc:'Steering brake housing',unit:'set',risk:'Tinggi',pri:'Wajib'},
+  {code:'CRW-011',group:'Crawler - Hydraulic',name:'Crawler hydraulic lift cylinder',sub:'Cylinder barrel, rod, piston, seal kit',func:'Mengangkat dan menurunkan implement belakang crawler.',loc:'Rear hydraulic lift',unit:'pcs',risk:'Tinggi',pri:'Wajib'},
+  {code:'CRW-012',group:'Crawler - Frame',name:'Track frame assembly',sub:'Main frame, bracket roller, bolt, guard',func:'Rangka dudukan seluruh komponen track.',loc:'Left/right lower frame',unit:'set',risk:'Sedang',pri:'Sedang'},
+
+  {code:'ALC-301',group:'Alcon 3 Inch - Pump',name:'Pump casing 3 inch',sub:'Volute casing, cover, drain plug',func:'Rumah aliran air dan dudukan impeller pompa 3 inch.',loc:'Pump body',unit:'pcs',risk:'Sedang',pri:'Wajib'},
+  {code:'ALC-302',group:'Alcon 3 Inch - Pump',name:'Impeller 3 inch',sub:'Impeller blade, hub, keyway',func:'Memutar dan mendorong air keluar dari casing.',loc:'Inside pump casing',unit:'pcs',risk:'Tinggi',pri:'Wajib'},
+  {code:'ALC-303',group:'Alcon 3 Inch - Seal',name:'Mechanical seal 3 inch pump',sub:'Carbon seal, ceramic seat, spring, rubber cup',func:'Mencegah air masuk ke mesin dan kebocoran poros.',loc:'Pump shaft',unit:'set',risk:'Tinggi',pri:'Wajib'},
+  {code:'ALC-304',group:'Alcon 3 Inch - Connection',name:'Suction flange 3 inch',sub:'Flange, gasket, bolt set',func:'Koneksi pipa hisap air.',loc:'Pump suction inlet',unit:'set',risk:'Sedang',pri:'Wajib'},
+  {code:'ALC-305',group:'Alcon 3 Inch - Connection',name:'Discharge flange 3 inch',sub:'Flange, gasket, bolt set',func:'Koneksi pipa buang/keluar air.',loc:'Pump discharge outlet',unit:'set',risk:'Sedang',pri:'Wajib'},
+  {code:'ALC-401',group:'Alcon 4 Inch - Pump',name:'Pump casing 4 inch',sub:'Volute casing, cover, drain plug',func:'Rumah aliran air dan dudukan impeller pompa 4 inch.',loc:'Pump body',unit:'pcs',risk:'Sedang',pri:'Wajib'},
+  {code:'ALC-402',group:'Alcon 4 Inch - Pump',name:'Impeller 4 inch',sub:'Impeller blade, hub, keyway',func:'Mendorong debit air lebih besar untuk irigasi sedang.',loc:'Inside pump casing',unit:'pcs',risk:'Tinggi',pri:'Wajib'},
+  {code:'ALC-403',group:'Alcon 4 Inch - Seal',name:'Mechanical seal 4 inch pump',sub:'Carbon seal, ceramic seat, spring, rubber cup',func:'Mencegah kebocoran pada poros pompa 4 inch.',loc:'Pump shaft',unit:'set',risk:'Tinggi',pri:'Wajib'},
+  {code:'ALC-404',group:'Alcon 4 Inch - Connection',name:'Check valve / foot valve 4 inch',sub:'Valve body, flap, screen, gasket',func:'Menahan air balik dan menjaga priming pompa.',loc:'Suction hose end',unit:'pcs',risk:'Sedang',pri:'Wajib'},
+  {code:'ALC-405',group:'Alcon 4 Inch - Hose',name:'Suction hose 4 inch',sub:'Flexible suction hose, clamp, strainer',func:'Jalur hisap air menuju pompa.',loc:'Water source to pump inlet',unit:'meter',risk:'Tinggi',pri:'Wajib'},
+  {code:'ALC-601',group:'Alcon 6 Inch - Pump',name:'Pump casing 6 inch',sub:'Large volute casing, cover, drain plug',func:'Rumah aliran pompa debit besar 6 inch.',loc:'Pump body',unit:'pcs',risk:'Sedang',pri:'Wajib'},
+  {code:'ALC-602',group:'Alcon 6 Inch - Pump',name:'Impeller 6 inch',sub:'Large impeller, hub, keyway',func:'Mendorong air debit besar untuk irigasi/proyek.',loc:'Inside pump casing',unit:'pcs',risk:'Tinggi',pri:'Wajib'},
+  {code:'ALC-603',group:'Alcon 6 Inch - Seal',name:'Mechanical seal 6 inch pump',sub:'Carbon seal, ceramic seat, spring, rubber cup',func:'Mencegah kebocoran pada poros pompa 6 inch.',loc:'Pump shaft',unit:'set',risk:'Tinggi',pri:'Wajib'},
+  {code:'ALC-604',group:'Alcon 6 Inch - Connection',name:'Suction-discharge flange 6 inch',sub:'Flange pair, gasket, bolt set',func:'Koneksi pipa hisap dan keluar ukuran 6 inch.',loc:'Pump inlet/outlet',unit:'set',risk:'Sedang',pri:'Wajib'},
+  {code:'ALC-605',group:'Alcon 6 Inch - Frame',name:'Pump frame & engine base',sub:'Base frame, rubber mounting, bolt set',func:'Dudukan mesin dan pompa agar stabil saat operasi.',loc:'Pump skid/base',unit:'set',risk:'Sedang',pri:'Sedang'},
+  {code:'ALC-606',group:'Alcon - Engine',name:'Engine recoil starter / electric starter',sub:'Starter pulley, rope, pawl / starter motor',func:'Sistem start mesin penggerak pompa Alcon.',loc:'Engine side',unit:'pcs',risk:'Sedang',pri:'Wajib'},
+  {code:'ALC-607',group:'Alcon - Engine',name:'Air filter engine pump',sub:'Foam/paper element, housing, cover',func:'Menyaring udara masuk mesin pompa.',loc:'Engine intake',unit:'pcs',risk:'Tinggi',pri:'Wajib'},
+  {code:'ALC-608',group:'Alcon - Engine',name:'Spark plug / injector nozzle',sub:'Spark plug gasoline / nozzle diesel',func:'Komponen pembakaran mesin penggerak pompa.',loc:'Cylinder head / injector port',unit:'pcs',risk:'Sedang',pri:'Wajib'},
+
+  {code:'CMB-001',group:'Combine - Header',name:'Cutter bar assembly',sub:'Knife section, guard, ledger plate, bolt',func:'Memotong batang padi sebelum masuk feeder.',loc:'Front header',unit:'set',risk:'Tinggi',pri:'Wajib'},
+  {code:'CMB-002',group:'Combine - Header',name:'Reel assembly',sub:'Reel bat, finger, shaft, bearing',func:'Mengarahkan tanaman padi ke cutter bar dan auger.',loc:'Header front',unit:'set',risk:'Sedang',pri:'Wajib'},
+  {code:'CMB-003',group:'Combine - Header',name:'Header auger',sub:'Auger tube, flighting, finger, bearing',func:'Mengumpulkan hasil potongan menuju feeder house.',loc:'Header center',unit:'pcs',risk:'Tinggi',pri:'Wajib'},
+  {code:'CMB-004',group:'Combine - Feeder',name:'Feeder chain & slat',sub:'Chain, slat bar, sprocket, tensioner',func:'Mengangkat material panen dari header ke threshing unit.',loc:'Feeder house',unit:'set',risk:'Tinggi',pri:'Wajib'},
+  {code:'CMB-005',group:'Combine - Threshing',name:'Threshing drum / cylinder',sub:'Drum, rasp bar, peg tooth, bearing',func:'Merontokkan gabah dari malai.',loc:'Threshing chamber',unit:'set',risk:'Tinggi',pri:'Wajib'},
+  {code:'CMB-006',group:'Combine - Threshing',name:'Concave screen',sub:'Concave bar, wire mesh, adjuster',func:'Menahan dan menyaring material saat perontokan.',loc:'Below threshing drum',unit:'pcs',risk:'Tinggi',pri:'Wajib'},
+  {code:'CMB-007',group:'Combine - Cleaning',name:'Cleaning fan',sub:'Fan blade, housing, pulley, bearing',func:'Meniup sekam dan kotoran ringan dari gabah.',loc:'Cleaning chamber',unit:'pcs',risk:'Sedang',pri:'Wajib'},
+  {code:'CMB-008',group:'Combine - Cleaning',name:'Upper/lower sieve',sub:'Sieve frame, adjustable louver, hanger',func:'Memisahkan gabah dari kotoran dan jerami kecil.',loc:'Cleaning shoe',unit:'set',risk:'Tinggi',pri:'Wajib'},
+  {code:'CMB-009',group:'Combine - Grain Handling',name:'Grain elevator chain',sub:'Chain, paddle, sprocket, bearing',func:'Mengangkat gabah bersih ke grain tank.',loc:'Grain elevator',unit:'set',risk:'Tinggi',pri:'Wajib'},
+  {code:'CMB-010',group:'Combine - Grain Handling',name:'Unloading auger',sub:'Auger tube, flighting, gearbox, bearing',func:'Mengeluarkan gabah dari grain tank ke karung/truk.',loc:'Grain tank outlet',unit:'set',risk:'Sedang',pri:'Wajib'},
+  {code:'CMB-011',group:'Combine - Track',name:'Rubber crawler track combine',sub:'Track belt, lug, guide, steel cord',func:'Media gerak combine di lahan sawah.',loc:'Left/right undercarriage',unit:'set',risk:'Tinggi',pri:'Wajib'},
+  {code:'CMB-012',group:'Combine - Track',name:'Track roller combine',sub:'Roller, bearing, seal, shaft',func:'Menopang track combine saat berjalan.',loc:'Undercarriage',unit:'pcs',risk:'Tinggi',pri:'Wajib'},
+  {code:'CMB-013',group:'Combine - Belt & Chain',name:'V-belt drive set',sub:'V-belt, pulley, tensioner',func:'Meneruskan tenaga mesin ke unit header/threshing/fan.',loc:'Side drive system',unit:'set',risk:'Tinggi',pri:'Wajib'},
+  {code:'CMB-014',group:'Combine - Belt & Chain',name:'Drive chain set',sub:'Roller chain, sprocket, chain guide',func:'Transmisi gerak untuk auger, elevator, dan feeder.',loc:'Side drive system',unit:'set',risk:'Tinggi',pri:'Wajib'},
+  {code:'CMB-015',group:'Combine - Hydraulic',name:'Header lift cylinder',sub:'Cylinder, rod, seal kit, pin',func:'Mengangkat dan menurunkan header combine.',loc:'Header lift linkage',unit:'pcs',risk:'Tinggi',pri:'Wajib'},
+  {code:'CMB-016',group:'Combine - Hydraulic',name:'Hydraulic hose combine',sub:'Pressure hose, fitting, clamp',func:'Jalur tekanan oli untuk cylinder dan kontrol combine.',loc:'Hydraulic circuit',unit:'pcs',risk:'Tinggi',pri:'Wajib'},
+  {code:'CMB-017',group:'Combine - Engine',name:'Radiator & cooling fan',sub:'Radiator core, cap, hose, fan blade',func:'Menjaga suhu mesin combine tetap stabil.',loc:'Engine bay',unit:'set',risk:'Tinggi',pri:'Wajib'},
+  {code:'CMB-018',group:'Combine - Engine',name:'Air filter combine engine',sub:'Primary element, safety element, housing',func:'Menyaring udara masuk mesin combine.',loc:'Engine intake',unit:'pcs',risk:'Tinggi',pri:'Wajib'},
+  {code:'CMB-019',group:'Combine - Electrical',name:'Sensor & switch panel',sub:'RPM sensor, safety switch, warning lamp',func:'Monitoring kerja mesin dan sistem panen.',loc:'Dashboard/electrical harness',unit:'set',risk:'Sedang',pri:'Sedang'},
+  {code:'CMB-020',group:'Combine - Consumable',name:'Bearing assorted combine',sub:'Bearing header, auger, fan, elevator',func:'Persediaan bearing untuk titik putar utama combine.',loc:'Multiple rotating points',unit:'set',risk:'Tinggi',pri:'Wajib'},
 
   {code:'HYD-001',group:'Hydraulic Pump',name:'Main hydraulic pump',sub:'Gear set, housing, shaft, bushing, oil seal, O-ring, gasket',func:'Menghasilkan tekanan oli untuk 3-point hitch, remote hydraulic, dan attachment.',loc:'Engine side / transmission case',unit:'pcs',risk:'Tinggi',pri:'Wajib'},
   {code:'HYD-002',group:'Hydraulic Pump',name:'Tandem hydraulic pump',sub:'Dual gear pump, common shaft, seal kit, flange',func:'Memisahkan aliran untuk steering dan implement pada traktor tertentu.',loc:'Engine timing gear / gearbox',unit:'pcs',risk:'Tinggi',pri:'Wajib'},
@@ -360,7 +419,7 @@ let parts=[
 ];
 
 const menu=[
-  ['dashboard','🏠','Dashboard'],['tractor','🚜','Master Traktor'],['sparepart','📦','Spare Part Umum'],['hydraulic','💧','Part List Hidrolik'],['catalog','🧾','Katalog Visual'],['stock','🔥','Stok Wajib'],['form','➕','Input Part'],['images','🖼️','Gambar Part'],['print','🖨️','Cetak Katalog']
+  ['dashboard','🏠','Dashboard'],['tractor','🚜','Master Unit'],['sparepart','📦','Spare Part Umum'],['hydraulic','💧','Part List Hidrolik'],['catalog','🧾','Katalog Visual'],['stock','🔥','Stok Wajib'],['form','➕','Input Part'],['images','🖼️','Gambar Part'],['print','🖨️','Cetak Katalog']
 ];
 function groupClass(v){return v==='Wajib'?'red':v==='Sedang'?'orange':'gray'}
 function riskClass(v){return v==='Tinggi'?'red':v==='Sedang'?'orange':'green'}
@@ -418,6 +477,9 @@ function card(p){
 function resetFilter(){document.getElementById('search').value='';document.getElementById('groupFilter').value='all';document.getElementById('priorityFilter').value='all';renderAll()}
 function visualType(p){
   const n=(p.code+' '+p.name+' '+p.group).toLowerCase();
+  if(n.includes('crawler')||n.includes('track')||n.includes('roller')||n.includes('sprocket'))return 'linkage';
+  if(n.includes('alcon')||n.includes('impeller')||n.includes('casing')||n.includes('flange'))return 'pump';
+  if(n.includes('combine')||n.includes('cutter')||n.includes('reel')||n.includes('auger')||n.includes('threshing')||n.includes('sieve'))return 'gear';
   if(n.includes('oil filter')||n.includes('fuel filter'))return 'filter';
   if(n.includes('clutch'))return 'clutch';
   if(n.includes('gear'))return 'gear';
