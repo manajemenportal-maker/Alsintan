@@ -99,7 +99,7 @@
     .pill.red{background:#fee2e2;color:#991b1b}.pill.orange{background:#ffedd5;color:#9a3412}.pill.green{background:#dcfce7;color:#166534}.pill.blue{background:#dbeafe;color:#1e40af}.pill.gray{background:#f1f5f9;color:#475569}
     .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:16px}.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
     .form{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}.form label{font-size:12px;font-weight:900;color:#41546d}.form input,.form select,.form textarea{margin-top:6px;width:100%;border:1px solid var(--line);border-radius:14px;padding:11px;background:#fff;font-weight:700}.form textarea{min-height:86px;resize:vertical}.full{grid-column:1/-1}
-    .part-thumb{height:170px;border-radius:18px;border:1px solid #dbe7f7;background:linear-gradient(135deg,#ffffff,#eef6ff);overflow:hidden;position:relative;display:grid;place-items:center}.part-thumb img{width:100%;height:100%;object-fit:contain;padding:10px;background:#fff}.part-thumb .visual-fallback{width:100%;height:100%;display:grid;place-items:center;padding:14px}.part-thumb svg{width:92%;height:92%}.thumb-label{position:absolute;top:10px;left:10px;background:#0b4aaa;color:#fff;font-size:10px;font-weight:950;border-radius:999px;padding:5px 8px}.thumb-note{position:absolute;right:10px;bottom:10px;background:rgba(255,255,255,.92);border:1px solid #dbe7f7;color:#17345f;font-size:10px;font-weight:950;border-radius:999px;padding:5px 8px}.catalog-summary{border:1px solid #dbe7f7;background:linear-gradient(135deg,#f8fbff,#eef6ff);border-radius:18px;padding:13px;display:grid;gap:8px}.catalog-summary-row{display:flex;gap:8px;flex-wrap:wrap}.catalog-summary b{font-size:12px;color:#17345f}.catalog-actions{display:grid;grid-template-columns:1fr 1fr;gap:10px}.part-card{display:grid;gap:12px}.part-head{display:flex;justify-content:space-between;gap:10px}.part-head h4{margin:0;font-size:16px}.part-head small{color:var(--muted);font-weight:800}.part-meta{display:flex;gap:8px;flex-wrap:wrap}.desc{color:#52637a;line-height:1.45;font-size:13px}.kbd{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;background:#f1f5f9;border:1px solid #e2e8f0;padding:2px 6px;border-radius:7px;font-size:11px}
+    .part-thumb{height:170px;border-radius:18px;border:1px solid #dbe7f7;background:linear-gradient(135deg,#ffffff,#eef6ff);overflow:hidden;position:relative;display:grid;place-items:center}.photo-missing{height:100%;width:100%;display:grid;place-items:center;text-align:center;padding:16px;background:#fff7ed;color:#9a3412;font-weight:900}.photo-missing span{display:block;font-size:11px;margin-top:6px;color:#7c2d12;word-break:break-word}.part-thumb img{width:100%;height:100%;object-fit:contain;padding:10px;background:#fff}.part-thumb .visual-fallback{width:100%;height:100%;display:grid;place-items:center;padding:14px}.part-thumb svg{width:92%;height:92%}.thumb-label{position:absolute;top:10px;left:10px;background:#0b4aaa;color:#fff;font-size:10px;font-weight:950;border-radius:999px;padding:5px 8px}.thumb-note{position:absolute;right:10px;bottom:10px;background:rgba(255,255,255,.92);border:1px solid #dbe7f7;color:#17345f;font-size:10px;font-weight:950;border-radius:999px;padding:5px 8px}.catalog-summary{border:1px solid #dbe7f7;background:linear-gradient(135deg,#f8fbff,#eef6ff);border-radius:18px;padding:13px;display:grid;gap:8px}.catalog-summary-row{display:flex;gap:8px;flex-wrap:wrap}.catalog-summary b{font-size:12px;color:#17345f}.catalog-actions{display:grid;grid-template-columns:1fr 1fr;gap:10px}.part-card{display:grid;gap:12px}.part-head{display:flex;justify-content:space-between;gap:10px}.part-head h4{margin:0;font-size:16px}.part-head small{color:var(--muted);font-weight:800}.part-meta{display:flex;gap:8px;flex-wrap:wrap}.desc{color:#52637a;line-height:1.45;font-size:13px}.kbd{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;background:#f1f5f9;border:1px solid #e2e8f0;padding:2px 6px;border-radius:7px;font-size:11px}
     .flow{display:grid;grid-template-columns:repeat(6,1fr);gap:10px}.flow div{background:#fff;border:1px solid var(--line);border-radius:18px;padding:14px;box-shadow:var(--shadow);text-align:center;font-weight:900}.flow span{display:block;color:var(--muted);font-size:11px;margin-top:4px}
     .print-area{background:#fff;border-radius:24px;border:1px solid var(--line);padding:20px;box-shadow:var(--shadow)}
     .watermark{font-size:12px;color:#8090a8;text-align:center;margin-top:20px}
@@ -444,33 +444,77 @@ function visualSVG(type){
   if(type==='cylinder')return `<svg viewBox="0 0 240 150"><rect x="68" y="62" width="104" height="32" rx="16" fill="#94a3b8" ${s}/><line x1="172" y1="78" x2="212" y2="78" ${s}/><circle cx="218" cy="78" r="15" fill="#fff" ${s}/><line x1="68" y1="78" x2="30" y2="78" ${s}/><circle cx="24" cy="78" r="15" fill="#fff" ${s}/></svg>`;
   return `<svg viewBox="0 0 240 150"><rect x="62" y="40" width="116" height="70" rx="18" fill="#cbd5e1" ${s}/><circle cx="92" cy="75" r="15" fill="#fff" ${s}/><circle cx="148" cy="75" r="15" fill="#fff" ${s}/></svg>`;
 }
+function imgFallback(el, code){
+  const name=String(code).toLowerCase()+'.png';
+  const tries=[
+    `./assets/part-visual/${name}`,
+    `assets/part-visual/${name}`,
+    `../assets/part-visual/${name}`,
+    `./part-visual/${name}`,
+    `part-visual/${name}`
+  ];
+  const i=Number(el.dataset.try||0);
+  if(i<tries.length){el.dataset.try=i+1;el.src=tries[i];return;}
+  el.style.display='none';
+  if(el.nextElementSibling)el.nextElementSibling.style.display='grid';
+}
+function hydImgFallback(el, sheetNo){
+  const name=`page-${sheetNo}.png`;
+  const tries=[
+    `./assets/hydraulic-catalog/${name}`,
+    `assets/hydraulic-catalog/${name}`,
+    `../assets/hydraulic-catalog/${name}`,
+    `./hydraulic-catalog/${name}`,
+    `hydraulic-catalog/${name}`
+  ];
+  const i=Number(el.dataset.try||0);
+  if(i<tries.length){el.dataset.try=i+1;el.src=tries[i];return;}
+  const box=el.closest('.catalog-ref');
+  if(box)box.classList.add('missing-img');
+}
+function realPhotoFile(code){
+  const map={
+    'ENG-001':'eng-001-real.png',
+    'ENG-002':'eng-002-real.png',
+    'CLT-001':'clt-001-real.png',
+    'TRN-001':'trn-001-real.png',
+    'BRK-001':'brk-001-real.png',
+    'ELC-001':'elc-001-real.png',
+    'BOD-001':'bod-001-real.png'
+  };
+  return map[code]||String(code).toLowerCase()+'.png';
+}
+function showMissingPhoto(el, code){
+  el.outerHTML=`<div class="photo-missing"><b>Foto belum terbaca</b><span>Upload file: assets/part-visual/${realPhotoFile(code)}</span></div>`;
+}
 function catalogThumb(p){
   if(isHyd(p)){
     const s=sheetForPart(p);
-    return `<div class="part-thumb" onclick="openPartModal('${p.code}')" style="cursor:pointer"><span class="thumb-label">Katalog Hidrolik</span><img src="${s.src}" alt="${p.name}" onerror="this.style.display='none';this.nextElementSibling.style.display='grid'"><div class="visual-fallback" style="display:none">${visualSVG(visualType(p))}</div><span class="thumb-note">${s.range}</span></div>`;
+    return `<div class="part-thumb" onclick="openPartModal('${p.code}')" style="cursor:pointer"><span class="thumb-label">Katalog Hidrolik</span><img src="${s.src}" alt="${p.name}" onerror="hydImgFallback(this,'${s.no}')"><span class="thumb-note">${s.range}</span></div>`;
   }
-  const src=`assets/part-visual/${p.code.toLowerCase()}.png`;
-  return `<div class="part-thumb" onclick="openGeneralPartModal('${p.code}')" style="cursor:pointer"><span class="thumb-label">Visual Part</span><img src="${src}" alt="${p.name}" onerror="this.style.display='none';this.nextElementSibling.style.display='grid'"><div class="visual-fallback" style="display:none">${visualSVG(visualType(p))}</div><span class="thumb-note">${p.code}</span></div>`;
+  const file=realPhotoFile(p.code);
+  const src=`./assets/part-visual/${file}?v=real2`;
+  return `<div class="part-thumb" onclick="openGeneralPartModal('${p.code}')" style="cursor:pointer"><span class="thumb-label">Foto Riil</span><img src="${src}" alt="${p.name}" onerror="showMissingPhoto(this,'${p.code}')"><span class="thumb-note">${p.code}</span></div>`;
 }
 function openGeneralPartModal(code){
   const p=parts.find(x=>x.code===code); if(!p)return;
-  const src=`assets/part-visual/${p.code.toLowerCase()}.png`;
+  const src=`./assets/part-visual/${realPhotoFile(p.code)}?v=real2`;
   document.getElementById('modalTitle').textContent=`${p.code} — ${p.name}`;
   document.getElementById('modalSub').textContent=`Visual spare part umum • ${p.group}`;
-  document.getElementById('modalBody').innerHTML=`<div class="detail-visual"><div class="visual-box"><h4>Visual Part</h4><div class="part-thumb big-fake"><span class="thumb-label">Visual Part</span><img src="${src}" alt="${p.name}" onerror="this.style.display='none';this.nextElementSibling.style.display='grid'"><div class="visual-fallback" style="display:none">${visualSVG(visualType(p))}</div></div><div class="caption">Path foto asli jika ingin diganti: ${src}</div></div><div class="visual-box"><h4>Data Part</h4><div class="spec-list" style="margin-top:0"><div><b>Kode</b>${p.code}</div><div><b>Group</b>${p.group}</div><div><b>Nama Part</b>${p.name}</div><div><b>Satuan</b>${p.unit}</div><div><b>Lokasi</b>${p.loc}</div><div><b>Prioritas</b><span class="pill ${groupClass(p.pri)}">${p.pri}</span></div><div class="full"><b>Fungsi</b>${p.func}</div><div class="full"><b>Sub Part / Isi Kit</b>${p.sub}</div></div></div></div>`;
+  document.getElementById('modalBody').innerHTML=`<div class="detail-visual"><div class="visual-box"><h4>Visual Part</h4><div class="part-thumb big-fake"><span class="thumb-label">Visual Part</span><img src="${src}" alt="${p.name}" onerror="imgFallback(this,'${p.code}')"><div class="visual-fallback" style="display:none">${visualSVG(visualType(p))}</div></div><div class="caption">Path foto asli: ${src}</div></div><div class="visual-box"><h4>Data Part</h4><div class="spec-list" style="margin-top:0"><div><b>Kode</b>${p.code}</div><div><b>Group</b>${p.group}</div><div><b>Nama Part</b>${p.name}</div><div><b>Satuan</b>${p.unit}</div><div><b>Lokasi</b>${p.loc}</div><div><b>Prioritas</b><span class="pill ${groupClass(p.pri)}">${p.pri}</span></div><div class="full"><b>Fungsi</b>${p.func}</div><div class="full"><b>Sub Part / Isi Kit</b>${p.sub}</div></div></div></div>`;
   document.getElementById('partModal').classList.add('active');
 }
 const CATALOG_SHEETS=[
-  {no:'01',title:'Hydraulic Pump & Oil Reservoir',range:'HYD-001 s/d HYD-010',from:1,to:10,src:'assets/hydraulic-catalog/page-01.png'},
-  {no:'02',title:'Filter System',range:'HYD-011 s/d HYD-015',from:11,to:15,src:'assets/hydraulic-catalog/page-02.png'},
-  {no:'03',title:'Pipe & Hose',range:'HYD-016 s/d HYD-022',from:16,to:22,src:'assets/hydraulic-catalog/page-03.png'},
-  {no:'04',title:'Fitting & Coupler',range:'HYD-023 s/d HYD-029',from:23,to:29,src:'assets/hydraulic-catalog/page-04.png'},
-  {no:'05',title:'Control Valve',range:'HYD-030 s/d HYD-037',from:30,to:37,src:'assets/hydraulic-catalog/page-05.png'},
-  {no:'06',title:'Cylinders',range:'HYD-038 s/d HYD-042',from:38,to:42,src:'assets/hydraulic-catalog/page-06.png'},
-  {no:'07',title:'Power Steering & 3-Point Hitch I',range:'HYD-043 s/d HYD-050',from:43,to:50,src:'assets/hydraulic-catalog/page-07.png'},
-  {no:'08',title:'3-Point Hitch II & Position/Draft Control',range:'HYD-051 s/d HYD-055',from:51,to:55,src:'assets/hydraulic-catalog/page-08.png'},
-  {no:'09',title:'Loader Hydraulic & Sensors',range:'HYD-056 s/d HYD-062',from:56,to:62,src:'assets/hydraulic-catalog/page-09.png'},
-  {no:'10',title:'Seals, Gaskets, Housing & Mounting',range:'HYD-063 s/d HYD-070',from:63,to:70,src:'assets/hydraulic-catalog/page-10.png'}
+  {no:'01',title:'Hydraulic Pump & Oil Reservoir',range:'HYD-001 s/d HYD-010',from:1,to:10,src:'./assets/hydraulic-catalog/page-01.png'},
+  {no:'02',title:'Filter System',range:'HYD-011 s/d HYD-015',from:11,to:15,src:'./assets/hydraulic-catalog/page-02.png'},
+  {no:'03',title:'Pipe & Hose',range:'HYD-016 s/d HYD-022',from:16,to:22,src:'./assets/hydraulic-catalog/page-03.png'},
+  {no:'04',title:'Fitting & Coupler',range:'HYD-023 s/d HYD-029',from:23,to:29,src:'./assets/hydraulic-catalog/page-04.png'},
+  {no:'05',title:'Control Valve',range:'HYD-030 s/d HYD-037',from:30,to:37,src:'./assets/hydraulic-catalog/page-05.png'},
+  {no:'06',title:'Cylinders',range:'HYD-038 s/d HYD-042',from:38,to:42,src:'./assets/hydraulic-catalog/page-06.png'},
+  {no:'07',title:'Power Steering & 3-Point Hitch I',range:'HYD-043 s/d HYD-050',from:43,to:50,src:'./assets/hydraulic-catalog/page-07.png'},
+  {no:'08',title:'3-Point Hitch II & Position/Draft Control',range:'HYD-051 s/d HYD-055',from:51,to:55,src:'./assets/hydraulic-catalog/page-08.png'},
+  {no:'09',title:'Loader Hydraulic & Sensors',range:'HYD-056 s/d HYD-062',from:56,to:62,src:'./assets/hydraulic-catalog/page-09.png'},
+  {no:'10',title:'Seals, Gaskets, Housing & Mounting',range:'HYD-063 s/d HYD-070',from:63,to:70,src:'./assets/hydraulic-catalog/page-10.png'}
 ];
 function hydNumber(code){return parseInt(String(code).replace('HYD-',''),10)||0}
 function sheetForPart(p){const n=hydNumber(p.code);return CATALOG_SHEETS.find(s=>n>=s.from&&n<=s.to)||CATALOG_SHEETS[0]}
